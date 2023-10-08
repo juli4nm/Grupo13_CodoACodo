@@ -1,0 +1,247 @@
+/* .header {
+   background-color: #273782;
+   border: 1px solid red;
+   border-radius: 20px;
+}
+
+.producto {
+    background-color: darkgrey;
+    padding: 5px;
+border: 1px none black;
+border-radius: 10px;
+text-align: center;
+} */
+
+/* }
+.padre{
+    border: 3px solid blueviolet;
+    padding: 20px 50px;
+    background-color: antiquewhite;
+   
+}
+.div1 {
+    /* height: 100px; */
+    /* width: 50%; */
+    /* border-color: red;
+    border-style: solid;
+    border-width: 2px 8px 15px;
+    padding: 20px;
+    margin: 20px
+} */
+/* .div2 { */
+    /* height: 100px; */
+    /* width: 50%; */
+    /* border: 3px solid rgb(0, 255, 85);
+    padding: 20px;
+    margin:20px
+} */ 
+
+
+/* p, h1 {
+    color: blue;
+} */
+
+/* p {            
+    font-size: 18px;
+}
+
+h1 {
+    color: #bbbbbb;
+    font-size: 50px;
+}
+
+h3 {
+    color: blue;
+    font-size: 24px;
+} */
+
+/* --------------------------------------------------------- */
+/* Defino estilo de contenedor */
+/* --------------------------------------------------------- */
+
+
+.header { grid-area: header; }
+.barra-menu{ grid-area: menu1;}
+.derecha {
+    grid-area: der;
+    padding: 0PX 15PX;
+    text-align: center;
+    background-color:antiquewhite;}
+
+.centro { 
+    grid-area: centro;
+    padding: 0PX 15PX;
+    text-align: center;
+    background-color: darkgrey;}
+.izquierda {
+    grid-area: izq;
+    padding: 0PX 15PX;
+    text-align: center;
+    background-color: antiquewhite;}
+
+.container-footer {grid-area: pie;}
+
+
+/* --------------------------------------------------------- */
+/* Defino estilo de contenedor pantalla grande */
+/* --------------------------------------------------------- */
+
+.container {
+    display: grid;
+    grid-template: auto auto auto auto / 20% auto 30%;
+    grid-template-areas: 'header header header'
+                         'menu1 menu1 menu1'
+                         'der centro izq'
+                         'pie pie pie';
+}
+
+/* --------------------------------------------------------- */
+/* Defino estilo de contenedor para table (pantalla mediana) */
+/* --------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template: auto auto auto auto auto / 50% auto;
+        grid-template-areas: 'header header'
+                             'menu1 menu1'
+                             'der der'
+                             'izq centro'
+                             'pie pie';
+    }
+}
+
+/* --------------------------------------------------------- */
+/* Defino estilo de contenedor para celular (pantalla chica) */
+/* --------------------------------------------------------- */
+@media (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template: auto auto auto auto auto auto / auto;
+        grid-template-areas: 'header'
+                             'menu1'
+                             'der'
+                             'centro'
+                             'izq'
+                             'pie';
+    }
+    
+    nav ul li a {
+        color: rgb(230, 226, 226);
+        display: block;
+        padding: 0px;
+        text-decoration: none;
+        background-color: blueviolet;
+        font-size: 12px;
+    }
+
+}
+
+#id {
+    width: 50px;
+    height: auto;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+
+/* --------------------------------------------------------- */
+/* menu */
+/* --------------------------------------------------------- */
+
+nav {
+background-color: #273782;
+border-radius: 10px;
+text-align: center;
+
+}
+nav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: rgb(230, 226, 226);
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+   background-color:rgb(119, 123, 172);
+   color: black;
+   border-radius: 10px;
+   transform: scale(1.2);
+}
+
+/* --------------------------------------------------------- */
+/* Estilos del Footer */
+/* --------------------------------------------------------- */
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #273782;
+    border: 1px solid red;
+    padding: 0px 20px;
+}
+
+.icon-footer {
+    display: flex;
+    color: white;
+    font-size: 24px;
+    column-gap: 10px;
+}
+
+.texto-footer {
+    margin: 0px;
+    color:white;
+}
+
+.name-logo {
+    display: flex;
+    flex-direction: column;
+    
+    
+    color: white;
+}
+
+.icono1 {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    background-color: white;
+    
+}
+
+/* --------------------------------------------------------- */
+/* Estilos del Header */
+/* --------------------------------------------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #273782;
+    border: 1px solid red;
+    padding: 0px 20px;
+}
+/* 
+.header > div {
+    border: 3px solid green; */
+
+.logo > img {
+    width: 100px;
+    padding: 10px;
+
+}
+
+.nombre-header {
+    width: 100%;
+    text-align: center;
+}

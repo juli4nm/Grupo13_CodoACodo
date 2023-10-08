@@ -1,0 +1,218 @@
+.body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2F2E33;
+    color: #d5d6d2;
+    padding: 10px;
+    grid-area: encabezado;
+}
+
+.encabezado img {
+   width: 100px ;
+   margin: 0px 15px;
+}
+
+.enc-centro h1 {
+    font-size: 42px;
+}
+
+.enc-izq {
+    display: flex;
+}
+
+.enc-der {
+    display: flex;
+}
+
+/* ---------------------------------------- */
+/* Estilos de menu */
+/* ------------------------------------------ */
+.menu {
+    background-color: #3a5199;
+    color: #d5d6d2;
+    text-align: center;
+    grid-area: menu;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0px;
+}
+
+.menu ul li {
+    display: inline-block;
+}
+
+.menu li a {
+    color: #2f2e33;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+background-color:#d5d6d2;
+animation: 1.5s infinite boton-menu;
+}
+
+@keyframes boton-menu {
+    0% {transform: scaleX(1.0);}
+    50% {transform: scaleX(2.5);}
+    100% {transform: scaleX(1.0);}
+}
+
+/* ---------------------------------------- */
+/* Estilos de Class: Articulo1 */
+/* ------------------------------------------ */
+
+
+.contenedor-p1 {
+    display: flex;
+    grid-area: contenedor-p1;
+    
+}
+
+.contenedor-p1 img {
+    width: 100%;
+    margin: 0px;
+    
+}
+
+/* ---------------------------------------- */
+/* Estilos de Class: Articulo2 */
+/* ------------------------------------------ */
+.articulo2 {
+    border: rgb(198, 241, 7) solid;
+    margin: 0px;
+    display: flex;
+    grid-area: articulo2;
+
+}
+.contenedor-p2 {
+    display: flex;
+    padding: 0px;
+    border: green solid;
+    content: center;
+    grid-area: contenedor-p2;
+}
+
+.contenedor-p2 div {
+    display: flex;
+
+}
+
+.contenedor-p3 {
+    display: flex;
+    margin: 1px 5px;
+    grid-area: contenedor-p3;
+    border: red solid;
+    align-items: center;
+ }
+
+
+ 
+.contenedor-p4 {
+    text-decoration-color: rgb(77, 76, 76);
+    align-content: center;
+    grid-area: contenedor-p4;
+    border: blueviolet solid;
+    padding: 10px;
+
+ }   
+
+/* ---------------------------------------- */
+/* Estilos de footer */
+/* ------------------------------------------ */
+
+.pie { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5px;
+    background-color: #2F2E33;
+    color: #d5d6d2;
+    grid-area: pie;
+    
+}
+
+.iconos {
+    display: flex;
+    column-gap: 12px;
+}
+
+.iconos a {
+    color:  #d5d6d2;
+    font-size: 24px;
+}
+
+/* ------------------------------------------------- */
+/* Estilos del contendor grid pantallas muy pequenas */
+/* ------------------------------------------------- */
+
+.contenedor {
+    display: grid;
+    grid-template: repeat(5, auto) / 100%;
+    grid-template-areas: "encabezado" 
+                          "menu"
+                          "articulo2"
+                          "contenedor-p1"
+                          "pie";
+}
+
+
+/* ------------------------------------------------- */
+/* Estilos del contendor grid pantallas small */
+/* ------------------------------------------------- */
+
+@media (min-width: 620px) {
+    .contenedor {
+        display: grid;
+        grid-template: repeat(4, auto) / 40% 60%;
+        grid-template-areas: "encabezado encabezado" 
+                              "menu menu"
+                              "articulo2 contenedor-p1"
+                              "pie pie";
+    }
+}
+.contenedor-p1 img{
+    height: auto;
+    margin-bottom: 10px;
+        
+}
+.contenedor-p2 div p {
+    padding-top: 20px;
+}
+
+.contenedor-p2{
+    display: block;
+    align-items: center;
+}
+
+
+/* ------------------------------------------------- */
+/* Estilos del contendor grid pantallas completa */
+/* ------------------------------------------------- */
+
+@media (min-width: 850px) {
+    .contenedor {
+        display: grid;
+        grid-template: repeat(5, auto) / 100%;
+        grid-template-areas: "encabezado" 
+                              "menu"
+                              "contenedor-p1"
+                              "articulo2"
+                              "pie";
+    }
+}
+    .contenedor-p1 img{
+        height: 65vw;
+        margin-bottom: 20px;
+    }
+    
