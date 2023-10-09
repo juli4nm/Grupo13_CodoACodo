@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2F2E33;
+    background-color: #170638;
     color: #d5d6d2;
     padding: 10px;
     grid-area: encabezado;
@@ -35,7 +35,7 @@
 /* Estilos de menu */
 /* ------------------------------------------ */
 .menu {
-    background-color: #3a5199;
+    background-color: #2f2e33;
     color: #d5d6d2;
     text-align: center;
     grid-area: menu;
@@ -55,17 +55,19 @@
     color: #2f2e33;
     padding: 10px;
     text-decoration: none;
+    color: #d5d6d2;
 }
 
 .menu li a:hover {
-background-color:#d5d6d2;
+background-color:#3a5199;
 animation: 1.5s infinite boton-menu;
+border-radius: 5px;
 }
 
 @keyframes boton-menu {
-    0% {transform: scaleX(1.0);}
-    50% {transform: scaleX(2.5);}
-    100% {transform: scaleX(1.0);}
+    0% {transform: scale(1.0);}
+    50% {transform: scale(2.5);}
+    100% {transform: scale(1.0);}
 }
 
 /* ---------------------------------------- */
@@ -114,6 +116,7 @@ animation: 1.5s infinite boton-menu;
     grid-area: contenedor-p3;
     border: red solid;
     align-items: center;
+    
  }
 
 
@@ -121,11 +124,19 @@ animation: 1.5s infinite boton-menu;
 .contenedor-p4 {
     text-decoration-color: rgb(77, 76, 76);
     align-content: center;
+ 
     grid-area: contenedor-p4;
+    
     border: blueviolet solid;
     padding: 10px;
-
  }   
+
+
+/* ---------------------------------------- */
+/* Estilos de aside */
+/* ------------------------------------------ */
+
+
 
 /* ---------------------------------------- */
 /* Estilos de footer */
@@ -171,7 +182,7 @@ animation: 1.5s infinite boton-menu;
 /* Estilos del contendor grid pantallas small */
 /* ------------------------------------------------- */
 
-@media (min-width: 620px) {
+@media (min-width: 720px) {
     .contenedor {
         display: grid;
         grid-template: repeat(4, auto) / 40% 60%;
