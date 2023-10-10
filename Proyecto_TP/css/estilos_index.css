@@ -122,13 +122,12 @@ border-radius: 5px;
 
  
 .contenedor-p4 {
-    text-decoration-color: rgb(77, 76, 76);
+    text-decoration-color: rgb(63, 62, 62);
     align-content: center;
- 
     grid-area: contenedor-p4;
-    
-    border: blueviolet solid;
+    border: #3a5199 solid;
     padding: 10px;
+
  }   
 
 
