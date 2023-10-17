@@ -76,7 +76,6 @@ border-radius: 5px;
 
 
 .contenedor-p1 {
-    display: flex;
     grid-area: contenedor-p1;
     
 }
@@ -92,7 +91,20 @@ border-radius: 5px;
 /* ------------------------------------------ */
 
 
+    
+.contenedor-p3 {
+    
+    grid-area: contenedor-p3;
+    align-content: center;
+    text-align: center;
+    
+}
 
+.contenedor-p4 {
+    grid-area: contenedor-p4;
+    
+    
+} 
 
 /* ---------------------------------------- */
 /* Estilos de aside */
@@ -136,11 +148,12 @@ border-radius: 5px;
 
 .contenedor {
     display: grid;
-    grid-template: repeat(5, auto) / 100%;
+    grid-template: repeat(6, auto) / 100%;
     grid-template-areas: "encabezado" 
                           "menu"
-                          "articulo2"
+                          "contenedor-p3"
                           "contenedor-p1"
+                          "contenedor-p4"
                           "pie";
 }
 
@@ -148,14 +161,14 @@ border-radius: 5px;
 /* ------------------------------------------------- */
 /* Estilos del contendor grid pantallas small */
 /* ------------------------------------------------- */
-
+/* 
 @media (min-width: 720px) {
     .contenedor {
         display: grid;
         grid-template: repeat(4, auto) / 40% 60%;
         grid-template-areas: "encabezado encabezado" 
                               "menu menu"
-                              "articulo2 contenedor-p1"
+                              "contenedor-p1 articulo2"
                               "pie pie";
     }
 }
@@ -171,7 +184,7 @@ border-radius: 5px;
 .contenedor-p2{
     display: block;
     align-items: center;
-}
+} */
 
 
 /* ------------------------------------------------- */
@@ -181,11 +194,12 @@ border-radius: 5px;
 @media (min-width: 850px) {
     .contenedor {
         display: grid;
-        grid-template: repeat(5, auto) / 100%;
+        grid-template: repeat(6, auto) / 100%;
         grid-template-areas: "encabezado" 
                               "menu"
                               "contenedor-p1"
-                              "articulo2"
+                              "contenedor-p3"
+                              "contenedor-p4"
                               "pie";
     }
 }
@@ -194,3 +208,43 @@ border-radius: 5px;
         margin-bottom: 20px;
     }
     
+
+/* ------------------------------------------------- */
+/* Estilos de Section (formulario) */
+/* ------------------------------------------------- */
+.section {
+    background-color: #3a5199;
+    padding: 10px;
+    border:#d5d6d2 solid;
+    align-items: center;
+    position: relative;
+    min-height: 1px;
+        }
+
+
+
+div h3 {
+    text-align: center;
+    color: #ffffff;
+    text-decoration: hsl(0, 0%, 100%);
+    
+}
+
+form {
+    color: #ffffff;
+   
+}
+
+.buttom {
+    display: inline-block;
+    line-height: 1;
+    background-color: #d5d6d2;
+    font-size: 12px;
+    
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #3a5199;
+    fill: #3a5199;
+    text-align: center;
+    transition: all .3s;
+}
