@@ -91,7 +91,6 @@ border-radius: 5px;
 /* Estilos de Class: Articulo2 */
 /* ------------------------------------------ */
 .articulo2 {
-    border: rgb(198, 241, 7) solid;
     margin: 0px;
     display: flex;
     grid-area: articulo2;
@@ -100,7 +99,6 @@ border-radius: 5px;
 .contenedor-p2 {
     display: flex;
     padding: 0px;
-    border: green solid;
     content: center;
     grid-area: contenedor-p2;
 }
@@ -112,10 +110,9 @@ border-radius: 5px;
 
 .contenedor-p3 {
     display: flex;
-    margin: 1px 5px;
     grid-area: contenedor-p3;
-    border: red solid;
     align-items: center;
+    margin-bottom: 0px;
     
  }
 
@@ -125,9 +122,7 @@ border-radius: 5px;
     text-decoration-color: rgb(63, 62, 62);
     align-content: center;
     grid-area: contenedor-p4;
-    border: #3a5199 solid;
-    padding: 10px;
-
+margin-bottom: 10px;
  }   
 
 
