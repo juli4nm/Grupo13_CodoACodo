@@ -248,3 +248,24 @@ form {
     text-align: center;
     transition: all .3s;
 }
+
+/* ------------------------------------------------- */
+/* Estilos al icono de Desplazarse-hacia-Arriba */
+/* ------------------------------------------------- */
+
+.desplazarse-hacia-arriba {
+    position: fixed;
+    right: 0.5%;
+    bottom: 3%;
+    cursor: pointer;
+  }
+  
+  .flecha-arriba {
+    width: 3rem;
+    height: 3rem;
+  }
+
+ i img {
+    object-fit: cover;
+    height: 2rem;
+  }
