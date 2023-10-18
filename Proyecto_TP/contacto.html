@@ -5,9 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajo Final</title>
+    <title>Trabajo Final_contacto</title>
     <link rel="stylesheet" href="./css/estilos_contacto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
 </head>
 
 <body>
@@ -57,27 +58,25 @@
                 <div class="contenedor-p3">
                     <h2>Hotel Draghi</h2>
                     Los pedidos de disponibilidad y reservas se solicitan por e-mail, responderemos su solicitud a la
-                    brevedad. Estamos ubicados en el casco antiguo del pueblo a 1 calle de la plaza principal “Ruiz de Arellano” y a un paso de los negocios, restaurantes, bares y museos.
-
+                    brevedad. Estamos ubicados en el casco antiguo del pueblo a 1 calle de la plaza principal “Ruiz de
+                    Arellano” y a un paso de los negocios, restaurantes, bares y museos.
+                    <p></p>
                 </div>
 
                 <div class="contenedor-p4">
 
-                    <b>
-                        <p>Horarios de atención telefónica</p>
-                    </b>
-                    <hr>
-                    <p> Lunes a sábados de 9:30 a 12:30 hs / 16:00 a 19:00 hs</p>
-                    Si no atendemos su llamada por favor envíenos un e-mail que será respondido a la brevedad. 
-
-                    <b>
-                        <p>Teléfonos</p>
-                    </b>
-                    <hr>
-                    <li>(02326) 45 5583</li>
-                    <li>(02325) 15 41 4067 (Llamar en los horarios publicados)</li>
-                    <p></p>
-
+                    <fieldset>
+                        <legend><b>Horarios de atención telefónica</b></legend>
+                        <p> Lunes a sábados de 9:30 a 12:30 hs / 16:00 a 19:00 hs</p>
+                        Si no atendemos su llamada por favor envíenos un e-mail que será respondido a la brevedad.
+                        <p></p>
+                    </fieldset>
+                    <fieldset>
+                        <legend><b>Teléfonos</b></legend>
+                        <li>(02326) 45 5583</li>
+                        <li>(02325) 15 41 4067 (Llamar en los horarios publicados)</li>
+                        <p></p>
+                    </fieldset>
                 </div>
 
             </div>
@@ -89,35 +88,35 @@
             <div>
                 <h3>Consultas y Reservas</h3>
             </div>
-            
-            <form action="mostrar_datos.html" target="_blank">
-                <label for="nom">Nombre:</label>
-                <input type="text" name="nombre" id="nom" size="15" required>
+
+            <form name="fvalida">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" size="15" required>
                 <br> <br>
-                <label for="Ape">Apellido:</label>
-                <input type="text" name="Apellido" id="Ape" required>
+                <label for="Apellido">Apellido:</label>
+                <input type="text" name="Apellido" id="Apellido" required>
                 <br><br>
                 <label for="dni">Documento:</label>
-                <input type="number" name="documento" id="dni" min="1000000" max="99999999">
+                <input type="number" name="dni" id="dni" min="1000000" maxlenght="8">
                 <br><br>
                 <label for="FeIng">Ingreso:</label>
-                <input type="date" name="FeIng" id="FeIng"required>
+                <input type="date" name="FeIng" id="FeIng" required>
                 <label for="FeEgr">Egreso:</label>
-                <input type="date" name="FeEgr" id="FeEgr"required>
+                <input type="date" name="FeEgr" id="FeEgr" required>
                 <label for="Hus">Huspedes:</label>
-                <input type="number" name="Hus" id="Hus" min="1" max="99"required>
+                <input type="number" name="Hus" id="Hus" min="1" max="19" required>
                 <br><br>
                 <label for="email">Correo: </label>
-                <input type="email" name="email"required>
+                <input type="email" name="email" required>
                 <br><br>
                 <label for="Mensaje">Mensaje:</label><br>
                 <textarea name="Mensaje" id="Mensaje" cols="40" rows="3" placeholder="Escribe tu consulta"></textarea>
                 <!-- Botones para controlar el formulario -->
                 <br><br>
-                <input type="reset" value="Borrar formulario" class="buttom">
-                <input type="submit" value="Enviar datos" class="buttom">
+                <input type="button" id="b1" value="Enviar" onclick="validarEnviar()" class="button">
+                <input type="reset" value="Borrar formulario" class="button">
                 <br><br>
-            
+
             </form>
 
         </section>
@@ -138,6 +137,7 @@
             </div>
         </footer>
     </div>
+    <script src="./validacion_formulario.js"></script>
 </body>
 
 </html>
