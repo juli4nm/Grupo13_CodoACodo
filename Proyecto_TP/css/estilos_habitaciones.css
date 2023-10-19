@@ -118,14 +118,7 @@
     background-color: red;
  }
 
- .divider {
-    display: flex;
-    margin:auto
-    width: 200px;
-    height: 5px;
-    border-radius: 20px;
-    background-color:#170638 ;
- }
+
 
 
 
