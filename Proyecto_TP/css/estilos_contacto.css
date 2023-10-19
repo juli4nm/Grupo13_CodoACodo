@@ -256,6 +256,7 @@ form {
 
 .desplazarse-hacia-arriba {
     position: fixed;
+    top: 70%;
     right: 0.5%;
     bottom: 9%;
     cursor: pointer;

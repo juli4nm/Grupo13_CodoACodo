@@ -84,6 +84,7 @@ border-radius: 5px;
 .contenedor-p1 img {
     width: 100%;
     margin: 0px;
+    object-fit: cover;
     
 }
 
@@ -222,4 +223,6 @@ margin-bottom: 10px;
         height: 65vw;
         margin-bottom: 20px;
     }
+
+
     
