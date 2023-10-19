@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2F2E33;
+    background-color: #170638;
     color: #d5d6d2;
     padding: 10px;
     grid-area: encabezado;
@@ -35,7 +35,7 @@
 /* Estilos de menu */
 /* ------------------------------------------ */
 .menu {
-    background-color: #3a5199;
+    background-color: #2f2e33;
     color: #d5d6d2;
     text-align: center;
     grid-area: menu;
@@ -55,11 +55,13 @@
     color: #2f2e33;
     padding: 10px;
     text-decoration: none;
+    color: #d5d6d2;
 }
 
 .menu li a:hover {
-background-color:#d5d6d2;
+background-color:#3a5199;
 animation: 1.5s infinite boton-menu;
+border-radius: 5px;
 }
 
 @keyframes boton-menu {
