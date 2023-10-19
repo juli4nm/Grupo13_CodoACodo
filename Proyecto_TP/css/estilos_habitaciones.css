@@ -1,0 +1,121 @@
+.galeria {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 40px 0px;
+    overflow: hidden;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.galeria img {
+    width: 100%;
+    height: 300px;
+    vertical-align: top;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.linea {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color:#170638 ;
+}
+
+.galeria a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.galeria a:hover img {
+    filter: blur(2px);
+    transform: rotate(10deg) scale(1.3);
+}
+
+.light-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    transition: transform .3s ease-in-out;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    transform: scale(0);
+}
+
+.light-box img {
+    width: 30vw;
+    max-height: 35vw;
+}
+
+.light-box:target {
+    transform: scale(1);
+}
+
+.close {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    font-size: 3ch;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.next {
+    display: block;
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.especificaciones {
+    display: flex;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.div-1, .div-2, .div-3, .div-4, .div-5 {
+    margin-right: 20px;
+}
+
+.btn-info {
+    display: flex;
+    margin-top: -10px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color: #170638;
+    padding: 5px 25px;
+    color: white;
+    cursor: pointer;
+}
+ .btn-info:hover {
+    background-color: red;
+ }
+
+ .divider {
+    display: flex;
+    margin: auto;
+    width: 200px;
+    height: 5px;
+    border-radius: 20px;
+    background-color:#170638 ;
+ }
+ 
