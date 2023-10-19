@@ -121,3 +121,21 @@
     background-color:#170638 ;
  }
 
+ .desplazarse-hacia-arriba {
+    position: fixed;
+    right: 0.5%;
+    top: 70%;
+    bottom: 3%;
+    cursor: pointer;
+  }
+  
+  .flecha-arriba {
+    width: 3rem;
+    height: 3rem;
+  }
+
+ i img {
+    object-fit: cover;
+    height: 2rem;
+  }
+
