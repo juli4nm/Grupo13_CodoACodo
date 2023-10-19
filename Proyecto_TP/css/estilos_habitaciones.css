@@ -61,7 +61,7 @@
 .close {
     display: block;
     position: absolute;
-    top: 60px;
+    top: auto;
     right: 60px;
     font-size: 3ch;
     color: white;
@@ -80,9 +80,11 @@
     color: white;
     height: 30px;
     width: 30px;
+    top: 80px;
     line-height: 30px;
     text-decoration: none;
     text-align: center;
+    
 }
 
 .especificaciones {
@@ -118,4 +120,4 @@
     border-radius: 20px;
     background-color:#170638 ;
  }
- 
+
