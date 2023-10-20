@@ -122,16 +122,8 @@
 
         <!-- API -->
         
-            <h4>Clientes que confiaron en nosotros</h4>   
-            <hr>
-            <div class="container">
-                <button onclick="traerDatosAPI()">Clientes</button>
-            </div>
-        
-            <div id="contenido_API" class="contenido_API">
-                <!-- Aquí insertaremos contenido que recuperamos mediante la API -->
-            </div>
-        
+            <h4>Clientes que confiaron en nosotros</h4>
+            <button onclick="traerDatosAPI()">Mostrar Clientes</button>   
                 <!-- desplazarse-hacia-arriba -->
             <i class="desplazarse-hacia-arriba" id="desplazarse-hacia-arriba"
             ><img
@@ -156,45 +148,51 @@
         </footer>
     </div>
   
-  
-    <!------- Script API ---------------------------------------------------->
+    <div class="container">
+        <button onclick="traerDatosAPI()">Leer datos con la API</button>
+    </div>
+    
+
+    <div id="contenido" class="contenido">
+        <!-- Aquí insertaremos contenido que recuperamos mediante la API -->
+    </div>
+    
+
+
+    <!-- Nuestro script ------------------------------>
     <script>
-        traerDatosAPI()
-        traerDatosAPI()
-        traerDatosAPI()
         // Define una función llamada traerDatosAPI que realizará una solicitud a una API.
         function traerDatosAPI() {
             // Utiliza la función fetch para realizar una solicitud GET a la URL de la API.
-            fetch('https://api.api-ninjas.com/v1/randomuser') // API a leer
-           
+            fetch('https://randomuser.me/api') // API a leer
+
                 // La función then() se encarga de manejar la respuesta de la solicitud.
                 .then(datos => datos.json()) // Convierte los datos de la respuesta a formato JSON y retorna una promesa.
-               
-               // Cuando se resuelva la promesa anterior, ejecuta esta función de devolución de llamada.
+
+                // Cuando se resuelva la promesa anterior, ejecuta esta función de devolución de llamada.
                 .then(datos => {
-                    console.log(datos)
-                    
                     // Actualiza el contenido del elemento HTML con el id "contenido".
                     contenido.innerHTML += `
-                        <div class="tarjeta">
-                            <!-- Muestra una imagen obtenida de los datos de la API. -->
-                            <img src="${datos.results[0].picture.large}"</img><br>
-
-                            <!-- Muestra el nombre obtenido de los datos de la API. -->
-                            Nombre: ${datos.results[0].name.last}, ${datos.results[0].name.first}<br>
-
-                            <!-- Muestra el nombre de usuario obtenido de los datos de la API. -->
-                            User: ${datos.results[0].login.username}<br>
-
-                            <!-- Muestra la contraseña obtenida de los datos de la API. -->
-                            Pass: ${datos.results[0].login.password}<br>
-
-                            <!-- Muestra la dirección de correo electrónico obtenida de los datos de la API. -->
-                            ${datos.results[0].email}
-                        </div>`;
+                            <div class="tarjeta">
+                                <!-- Muestra una imagen obtenida de los datos de la API. -->
+                                <img src="${datos.results[0].picture.large}"</img><br>
+    
+                                <!-- Muestra el nombre obtenido de los datos de la API. -->
+                                Nombre: ${datos.results[0].name.last}, ${datos.results[0].name.first}<br>
+    
+                                <!-- Muestra el nombre de usuario obtenido de los datos de la API. -->
+                                User: ${datos.results[0].login.username}<br>
+    
+                                <!-- Muestra la contraseña obtenida de los datos de la API. -->
+                                Pass: ${datos.results[0].login.password}<br>
+    
+                                <!-- Muestra la dirección de correo electrónico obtenida de los datos de la API. -->
+                                ${datos.results[0].email}
+                            </div>`;
                 })
         }
-    </script>
+</script>
+
   <!------- Script validacion_formulario.JS ------------------------------>
   <script src="./js/validacion_formulario.js"></script>
 </body>
