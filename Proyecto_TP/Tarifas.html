@@ -3,27 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajo Final</title>
-    <link rel="stylesheet" href="./css/estilos_tarifas.css">
+    <title>Tarifas</title>
+    <link rel="stylesheet" href="./css/estilos_index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/estilos_habitaciones.css">
 </head>
 
 <body>
     <!-- contenedor principal -->
     <div class="contenedor">
-
         <!-- encabezado -->
         <header class="encabezado">
-
             <div class="enc-izq">
                 <img src="./imagenes/logo3.PNG" alt="logo1">
 
             </div>
+
             <div class="enc-centro">
                 <h1>Tarifas</h1>
-
             </div>
+
             <div class="enc-der">
                 <img src="./imagenes/logo3.PNG" alt="logo1">
 
@@ -40,52 +41,114 @@
             </ul>
 
         </nav>
+        <div class="especificaciones">
+            <div class="div-1">
+                <h3>Equipamiento:</h3>
+                <li>Calefacción.</li>
+                <li>Jacuzzi.</li>
+                <li>TV satelital.</li>
+            </div>
+            <div class="div-2">
+                <h3>Desayuno:</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro perferendis atque nemo, inventore
+                    ducimus cumque facilis saepe corrupti? Commodi tenetur quae officiis nostrum ullam? Harum qui nemo
+                    fugiat corporis possimus?</p>
+            </div>
+            <div class="div-3">
+                <h3>Check-in desde las 3 pm:</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nulla est consequatur. Sint eum rerum
+                    aliquam, laborum porro cum ipsa consequuntur odit repellat dolores laboriosam, sed quae iure quasi
+                    minima.</p>
+            </div>
+            <div class="div-4">
+                <h3>Check-out hasta las 12 pm:</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab suscipit perspiciatis at id laboriosam,
+                    cum cupiditate? Magnam sit nam reprehenderit, nostrum dolor provident cumque ipsam, architecto
+                    voluptatum velit, nihil qui.</p>
+            </div>
 
-        <!-- articulo -->
-        <div class="grid-container">
-            <div class="grid-item">
-                <h3 align="center">Habitaciones simples</h3>
-                <p align="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut enim necessitatibus commodi laboriosam veritatis libero voluptatibus corporis repellendus sequi, odit adipisci ab autem nesciunt quibusdam possimus. Eaque, fuga ullam! Incidunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis beatae obcaecati, magni quasi consequuntur, laudantium id dolorum hic consectetur nobis quam mollitia aut cumque sit minima, magnam velit? Ullam, temporibus.</p>
-                <h4 align="left">Tarifa</h4>
-                <p align="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fugit nisi ex iure optio tempore, minus illo, deleniti eius mollitia placeat est, porro reiciendis deserunt corporis ullam architecto quas possimus?</p>
+
+        </div>
+        <span class="linea"></span>
+        <section class="galeria">
+            <a href="#image1" src=""><img src="./imagenes/draghi-recuadro-1.jpg" alt=""> </a>
+            <a href="#image2" src=""><img src="./imagenes/draghi-recuadro-2.jpg" alt=""> </a>
+            <a href="#image3" src=""><img src="./imagenes/draghi-recuadro-3.jpg" alt=""> </a>
+            <a href="#image4" src=""><img src="./imagenes/IMAGEN3.jpg" alt=""> </a>
+            <a href="#image5" src=""><img src="./imagenes/hotel-draghi-10.jpg" alt=""> </a>
+            <a href="#image6" src=""><img src="./imagenes/empezo-a-florecer.jpg" alt=""> </a>
+
+        </section>
+        <article class="light-box" id="image1">
+            <a href="#image6" class="next"><i class="fas fa-arrow-left"></i></a>
+            <img src="./imagenes/draghi-recuadro-1.jpg" alt="">
+            <a href="#image2" class="next"><i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="close">x</a>
+        </article>
+
+        <article class="light-box" id="image2">
+            <a href="#image1" class="next"><i class="fas fa-arrow-left"></i></a>
+            <img src="./imagenes/draghi-recuadro-2.jpg" alt="">
+            <a href="#image3" class="next"><i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="close">x</a>
+        </article>
+
+        <article class="light-box" id="image3">
+            <a href="#image2" class="next"><i class="fas fa-arrow-left"></i></a>
+            <img src="./imagenes/draghi-recuadro-3.jpg" alt="">
+            <a href="#image4" class="next"><i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="close">x</a>
+        </article>
+
+        <article class="light-box" id="image4">
+            <a href="#image3" class="next"><i class="fas fa-arrow-left"></i></a>
+            <img src="./imagenes/IMAGEN3.jpg" alt="">
+            <a href="#image5" class="next"><i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="close">x</a>
+        </article>
+
+        <article class="light-box" id="image5">
+            <a href="#image6" class="next"><i class="fas fa-arrow-left"></i></a>
+            <img src="./imagenes/hotel-draghi-10.jpg" alt="">
+            <a href="#image6" class="next"><i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="close">x</a>
+        </article>
+
+        <article class="light-box" id="image6">
+            <a href="#image6" class="next"><i class="fas fa-arrow-left"></i></a>
+            <img src="./imagenes/empezo-a-florecer.jpg" alt="">
+            <a href="#image1" class="next"><i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="close">x</a>
+        </article>
+        <span class="linea"></span>
+
+        <div>
+            <div class="div-5">
+                <h3>Políticas:</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum natus ipsa delectus tempora. Eius
+                    dicta quam consequuntur illo. Quis veniam magnam iste laboriosam maiores, autem voluptatibus. Velit
+                    non eaque dolores! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro corrupti eos
+                    possimus officiis architecto minus dignissimos soluta nulla totam veritatis, odit libero obcaecati
+                    dicta voluptatum</p><button class="btn-info">Leer más</button>
+
             </div>
-            <div class="grid-item"><img src="./imagenes/F1.jpg" alt="Foto1HabSimple" width="400" height="400"></div>
-            <div class="grid-item"><img src="./imagenes/F2.jpg" alt="Foto2HabSimple" width="400" height="400"></div>
-            <div class="grid-item">
-                <h3 align="center">Habitaciones dobles</h3>
-                <p align="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quia rerum asperiores esse aut magnam illo, a voluptates inventore repellendus harum ad amet, optio ex vel! Optio reprehenderit exercitationem enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est tempora in quod et inventore, earum ea eius, sed optio consectetur corporis quos, doloremque nam quisquam aut at. Nulla, corporis quod?</p>
-                <h4 align="left">Tarifa</h4>
-                <p align="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fugit nisi ex iure optio tempore, minus illo, deleniti eius mollitia placeat est, porro reiciendis deserunt corporis ullam architecto quas possimus?</p>
-            </div>
-            <div class="grid-item"><img src="./imagenes/F3.jpg" alt="Foto1HabDoble" width="400" height="400"></div>
-            <div class="grid-item"><img src="./imagenes/F4.jpg" alt="Foto2HabDoble" width="400" height="400"></div>
-            <div class="grid-item">
-                <h3 align="center">Habitaciones triples</h3>
-                <p align="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aliquid hic necessitatibus earum corrupti nemo officia neque, totam facere nobis quidem ex quibusdam assumenda officiis quas porro quasi voluptatum labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni perspiciatis voluptas voluptatibus laudantium assumenda repudiandae minus illum possimus dolore nobis, a, facilis incidunt, exercitationem blanditiis itaque quaerat libero odio nihil.</p>
-                <h4 align="left">Tarifa</h4>
-                <p align="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fugit nisi ex iure optio tempore, minus illo, deleniti eius mollitia placeat est, porro reiciendis deserunt corporis ullam architecto quas possimus?</p>
-            </div>
-            <div class="grid-item"><img src="./imagenes/F5.jpg" alt="Foto1HabTriple" width="400" height="400"></div>
-            <div class="grid-item"><img src="./imagenes/F6.jpg" alt="Foto2HabTriple" width="400" height="400"></div>
+                
+            <!-- pie de pagina -->
+            <footer class="pie">
+                <div>
+                    <p> &copy; 2023 Hotel Draghy</p>
+                </div>
+                <div class="iconos">
+                    <a href="#"><span class="fab fa-facebook" title="Ir a facebook"></span></a>
+                    <a href="#"><span class="fab fa-instagram" title="Ir a Instagram"></span></a>
+                    <a href="#"><span class="fab fa-twitter" title="Ir a Twitter"></span></a>
+                    <a href="#"><span class="fas fa-envelope" title="Enviar correo"></span></a>
+                </div>
+            </footer>
         </div>
 
-        <!-- aside -->
-        <aside class="aside">
+        <script src="main2.js"></script>
 
-        </aside>
-        <!-- pie de pagina -->
-        <footer class="pie">
-            <div>
-                <p> &copy; 2023 Hotel Draghy</p>
-            </div>
-            <div class="iconos">
-                <a href="#"><span class="fab fa-facebook" title="Ir a facebook"></span></a>
-                <a href="#"><span class="fab fa-instagram" title="Ir a Instagram"></span></a>
-                <a href="#"><span class="fab fa-twitter" title="Ir a Twitter"></span></a>
-                <a href="#"><span class="fas fa-envelope" title="Enviar correo"></span></a>
-            </div>
-        </footer>
-    </div>
 </body>
 
 </html>
