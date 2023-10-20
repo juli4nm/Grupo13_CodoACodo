@@ -324,4 +324,6 @@ form {
     overflow: hidden;
     text-align: center;
 }
-
+div h4 {
+    text-align: center;
+}
