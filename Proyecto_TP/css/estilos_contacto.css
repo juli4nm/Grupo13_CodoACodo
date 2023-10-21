@@ -215,12 +215,19 @@ border-radius: 5px;
 .section {
     background-color: #3a5199;
     padding: 10px;
-    border:#d5d6d2 solid;
     align-items: center;
     position: relative;
     min-height: 1px;
+    margin: 0px 300px 0px 300px;
+    justify-content: center;
+    display: grid;
         }
 
+/* section form {
+   border-color: aqua solid;
+    align-items: center;
+    justify-content: center;
+} */
 
 
 
@@ -233,6 +240,7 @@ div h3 {
 
 form {
     color: #ffffff;
+
    
 }
 
@@ -256,7 +264,7 @@ form {
 
 .desplazarse-hacia-arriba {
     position: fixed;
-    top: 70%;
+    top: 85%;
     right: 0.5%;
     bottom: 9%;
     cursor: pointer;
