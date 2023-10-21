@@ -43,44 +43,46 @@
 
         </nav>
         <!-- articulo1 -->
-        <article class="articulo1">
+<!--         <article class="articulo1">
             <div class="contenedor-p1">
                 <div>
                     <img src="./imagenes/puente-ST.jpg" alt="imagen-contacto1">
                 </div>
             </div>
 
-        </article>
+        </article> -->
 
         <!-- articulo2 -->
         <article class="articulo2">
             <div class="contenedor-p2">
                 <div class="contenedor-p3">
-                    <h2>Hotel Draghi</h2>
+                    <h2>Ubicación</h2>
                     Estamos ubicados en el casco antiguo del pueblo a 1 calle de la plaza principal “Ruiz de
                     Arellano” y a un paso de los negocios, restaurantes, bares y museos.
                     <p></p>
                     
                     <div class="map">
-                        <h3>Ubicacion</h3>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1649.122751414002!2d-59.47434441908853!3d-34.24227866389854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bbeaaa9fca1347%3A0x2b3e13c18dbd5830!2sHotel%20Draghi!5e0!3m2!1ses-419!2sar!4v1697830984273!5m2!1ses-419!2sar" width="300" height="250" style="border: 1px solid #555;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1649.122751414002!2d-59.47434441908853!3d-34.24227866389854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bbeaaa9fca1347%3A0x2b3e13c18dbd5830!2sHotel%20Draghi!5e0!3m2!1ses-419!2sar!4v1697830984273!5m2!1ses-419!2sar" width="300" height="250" style="border: 1px solid #555;border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     
                 </div>
 
                 <div class="contenedor-p4">
 
-                    <fieldset>
+                    <fieldset style="border-radius: 10px;">
                         <legend><b>Horarios de atención telefónica</b></legend>
                         <p> Lunes a sábados de 9:30 a 12:30 hs / 16:00 a 19:00 hs</p>
                         Los pedidos de disponibilidad y reservas se solicitan por e-mail, responderemos su solicitud a la
                     brevedad. Si no atendemos su llamada por favor envíenos un e-mail que será respondido a la brevedad.
                         <p></p>
                     </fieldset>
-                    <fieldset>
+                    <br>
+                    <br>
+                    <fieldset style="border-radius: 10px;">
                         <legend><b>Teléfonos</b></legend>
                         <li>(02326) 45 5583</li>
-                        <li>(02325) 15 41 4067 (Llamar en los horarios publicados)</li>
+                        <li>(02325) 15 41 4067  (Llamar en los horarios publicados)</li>
                         <p></p>
                     </fieldset>
                 </div>
@@ -92,7 +94,7 @@
         <!-- section -->
         <section class="section">
             <div>
-                <h3>Consultas y Reservas</h3>
+                <h3 class="consultas">Consultas y Reservas</h3>
             </div>
 
             <form name="fvalida">
@@ -127,7 +129,7 @@
     </p>
         <!-- API -->
         
-            <h4>Clientes que confiaron en nosotros</h4>
+         <!-- <h4>Clientes que confiaron en nosotros</h4> -->   
             
                 <!-- desplazarse-hacia-arriba -->
             <i class="desplazarse-hacia-arriba" id="desplazarse-hacia-arriba"
@@ -154,7 +156,7 @@
     </div>
   
     <div class="container">
-        <button onclick="traerDatosAPI()">Mostrar Clientes</button>
+        <button onclick="traerDatosAPI()" class="btn-contacto">Clientes que confiaron en nosotros</button>
     </div>
     
 
