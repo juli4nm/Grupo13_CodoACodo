@@ -363,7 +363,7 @@ div h4 {
         margin-bottom: 20px;
     } */
 
-@media (max-width:360px){ /* 360x640*/
+@media (max-width:767px){ /* responsive 767px celular */
 
     .encabezado{
         width: 125%;
@@ -427,13 +427,131 @@ div h4 {
 }
 
 
-@media (min-width:800px){
-   
+@media (min-width:767px) and (max-width: 990px){ /* responsive 768px hasta 990px tablet*/   
 
+
+.encabezado{
+    width: 100%;
+    height: 76px;
+    margin-left: 10px;
+    
+}
+.enc-centro{
+    text-align: center;
+}
+.menu{    
+    margin-left:10px;
+    width: 103%;
+}
+.contenedor-p4{
+    top: 120px;
+    width: 280px;
+    margin-left: 8px;
+}
+.section{
+    text-align: center;
+    width: 380px;  
+    left: 290px;
+    bottom: -1px;
+           
+}
+.consultas{     
+    text-align:center ;  
 }
 
+.contenedor-p3{
+    width: 300px;
+    left: 680px;
+}
+.map{
+    width: 10px;
+}
 
-
+.btn-contacto{
+    margin-top: 0%;
+       
+}
+.container{
+    left: 100px;
+}
+.pie { 
+    
+    width: 103%;
+         
+}
+.iconos{
+    
+    width: 120px;
+    margin-right: 50px;   
+}
+.contenido_API{
+    margin-right: 150px;
+    margin-left: 230px;
+    width: 310px;
+    
+}
+}
+@media (min-width:991px){ /* responsive 991px computadora*/
+    .encabezado{
+        width: 100%;
+        height: 76px;
+        margin-left: 10px;
+        
+    }
+    .enc-centro{
+        text-align: center;
+    }
+    .menu{    
+        margin-left:10px;
+        width: 103%;
+    }
+    .contenedor-p4{
+        top: 120px;
+        width: 250px;
+        margin-left: 10px;
+    }
+    .section{
+        text-align: center;
+        width: 380px;  
+        left: 270px;
+        bottom: -1px;
+               
+    }
+    .consultas{     
+        text-align:center ;  
+    }
+    
+    .contenedor-p3{
+        
+        width: 20%;
+        padding-top: -50%;
+        left: 675px; 
+        
+    }
+    .btn-contacto{
+        margin-top: 0%;
+           
+    }
+    .container{
+        left: 100px;
+    }
+    .pie { 
+        
+        width: 103%;
+             
+    }
+    .iconos{
+        
+        width: 120px;
+        margin-right: 50px;   
+    }
+    .contenido_API{
+        margin-right: 150px;
+        margin-left: 230px;
+        width: 310px;
+        
+    }
+} 
 
 /* @keyframes boton-menu {
     0% {transform: scale(1.0);}
