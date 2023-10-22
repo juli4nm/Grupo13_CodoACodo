@@ -363,32 +363,32 @@ div h4 {
         margin-bottom: 20px;
     } */
 
-@media (max-width:800px){
+@media (max-width:360px){ /* 360x640*/
 
     .encabezado{
-        width: 92%;
-        height: 80px;
-        margin-left: 4%;
+        width: 125%;
+        height: 76px;
+        margin-left: 10px;
+        
     }
     .enc-centro{
         text-align: center;
     }
     .menu{
-        margin-right: 70px;
-        margin-left:47px;
-        width: 88%;
+        
+        margin-left:10px;
+        width: 131%;
     }
     .contenedor-p4{
-        top: 150px;
-        width: 77%;
+        top: 120px;
+        width: 300px;
         margin-left: 70px;
     }
     .section{
         text-align: center;
-        width: 80%;
-        
-        left: 70px;
-        bottom: -350px;
+        width: 380px;  
+        left: 38px;
+        bottom: -400px;
                
     }
     .consultas{     
@@ -396,40 +396,39 @@ div h4 {
     }
    
     .contenedor-p3{
-        top: 950px;
-        width: auto;
-        left: 150px;
-        right: 140px;
+        display: none;
         
     }
     .btn-contacto{
-        margin-top: 130%;
-        left: 150px;
-
-        
+        margin-top: 120%;
+           
+    }
+    .container{
+        left: 200px;
     }
     .pie { 
+        width: 430px;
         
              
     }
     .iconos{
-        width: 230px;
-        margin-left: 100px;
-        margin-right: 0;
+        
+        width: 50px;
+        margin-right: 100px;
+        
+        
     }
     .contenido_API{
         margin-right: 150px;
-        margin-left: 70px;
-        width: 80%;
+        margin-left: 50px;
+        width: 310px;
+        
     }
 }
 
 
-@media (min-width:600px){
-    body{
-
-        background-color: red;
-    }
+@media (min-width:800px){
+   
 
 }
 
