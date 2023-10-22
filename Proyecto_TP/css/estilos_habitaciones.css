@@ -78,11 +78,12 @@ border-radius: 5px;
 .grid-container {
         width: auto;
         display: grid;
-        grid-template-columns: repeat(3, auto);
-        grid-template-rows: repeat(3, 500px);
+        grid-template-columns: repeat(auto-fill, minmax(20rem,1fr));
+        grid-template-rows: repeat(3, 405px);
         grid-gap: 15px;
         background-color: rgb(213,214,210);
         padding: 15px;
+        
 }
 
 .grid-container > div {
@@ -90,9 +91,10 @@ border-radius: 5px;
     background-color: rgb(213,214,210);
     text-align: center;
     font-size: 16px;
-    height: 500px;
+    height: 405px;
     padding-left: 30px;
     padding-right: 20px;
+
    }
 
 
