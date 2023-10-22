@@ -90,7 +90,11 @@ border-radius: 5px;
 /* Estilos de Class: Articulo2 */
 /* ------------------------------------------ */
 
-
+.contenedor-p2 {
+    margin-left: 20px;
+    display: flex;
+    grid-area: contenedor-p2;
+}
     
 .contenedor-p3 {
     position: absolute;
@@ -108,6 +112,7 @@ border-radius: 5px;
 }
 
 .contenedor-p4 {
+  
     grid-area: contenedor-p4;
     position: absolute;
     margin-right: 75%;
@@ -226,8 +231,8 @@ border-radius: 5px;
 /* ------------------------------------------------- */
 .section {
     background-color: #3a5199;
-    padding-top: 20px;
-    border-radius: 10%;
+    padding: 10px;
+    border-radius: 5%;
     align-items: center;
     position: relative;
     min-height: 1px;
@@ -366,3 +371,5 @@ form {
 div h4 {
     text-align: center;
 }
+
+
