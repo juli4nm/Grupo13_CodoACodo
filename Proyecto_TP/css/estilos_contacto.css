@@ -366,7 +366,7 @@ div h4 {
 @media (max-width:767px){ /* responsive 767px celular */
 
     .encabezado{
-        width: 125%;
+        width: auto;
         height: 76px;
         margin-left: 10px;
         
@@ -525,7 +525,7 @@ div h4 {
         
         width: 20%;
         padding-top: -50%;
-        left: 675px; 
+        
         
     }
     .btn-contacto{
