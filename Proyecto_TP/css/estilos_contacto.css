@@ -64,11 +64,6 @@ animation: 1.5s infinite boton-menu;
 border-radius: 5px;
 }
 
-@keyframes boton-menu {
-    0% {transform: scale(1.0);}
-    50% {transform: scale(2.5);}
-    100% {transform: scale(1.0);}
-}
 
 /* ---------------------------------------- */
 /* Estilos de Class: Articulo1 */
@@ -199,27 +194,7 @@ border-radius: 5px;
 } */
 
 
-/* ------------------------------------------------- */
-/* Estilos del contendor grid pantallas completa */
-/* ------------------------------------------------- */
 
-@media (min-width: 850px) {
-    .contenedor {
-        display: grid;
-        grid-template: repeat(6, auto) / 100%;
-        grid-template-areas: "encabezado" 
-                              "menu"
-                              "contenedor-p1"
-                              "contenedor-p3"
-                              "contenedor-p4"
-                              "pie";
-    }
-}
-    .contenedor-p1 img{
-        height: 65vw;
-        margin-bottom: 20px;
-    }
-    
 
 /* ------------------------------------------------- */
 /* Estilos de Section (formulario) */
@@ -366,3 +341,103 @@ form {
 div h4 {
     text-align: center;
 }
+
+/* ------------------------------------------------- */
+/* Estilos del contendor grid pantallas completa */
+/* ------------------------------------------------- */
+/* 
+@media (min-width: 850px) {
+    .contenedor {
+        display: grid;
+        grid-template: repeat(6, auto) / 100%;
+        grid-template-areas: "encabezado" 
+                              "menu"
+                              "contenedor-p1"
+                              "contenedor-p3"
+                              "contenedor-p4"
+                              "pie";
+    }
+}
+    .contenedor-p1 img{
+        height: 65vw;
+        margin-bottom: 20px;
+    } */
+
+@media (max-width:800px){
+
+    .encabezado{
+        width: 92%;
+        height: 80px;
+        margin-left: 4%;
+    }
+    .enc-centro{
+        text-align: center;
+    }
+    .menu{
+        margin-right: 70px;
+        margin-left:47px;
+        width: 88%;
+    }
+    .contenedor-p4{
+        top: 150px;
+        width: 77%;
+        margin-left: 70px;
+    }
+    .section{
+        text-align: center;
+        width: 80%;
+        
+        left: 70px;
+        bottom: -350px;
+               
+    }
+    .consultas{     
+        text-align:center ;  
+    }
+   
+    .contenedor-p3{
+        top: 950px;
+        width: auto;
+        left: 150px;
+        right: 140px;
+        
+    }
+    .btn-contacto{
+        margin-top: 130%;
+        left: 150px;
+
+        
+    }
+    .pie { 
+        
+             
+    }
+    .iconos{
+        width: 230px;
+        margin-left: 100px;
+        margin-right: 0;
+    }
+    .contenido_API{
+        margin-right: 150px;
+        margin-left: 70px;
+        width: 80%;
+    }
+}
+
+
+@media (min-width:600px){
+    body{
+
+        background-color: red;
+    }
+
+}
+
+
+
+
+/* @keyframes boton-menu {
+    0% {transform: scale(1.0);}
+    50% {transform: scale(2.5);}
+    100% {transform: scale(1.0);}
+} */
