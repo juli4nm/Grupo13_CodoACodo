@@ -347,3 +347,101 @@ div h4 {
     text-align: center;
 }
 
+/* ------------------------------------------------- */
+/* Estilos del contendor grid pantallas completa */
+/* ------------------------------------------------- */
+/* 
+@media (min-width: 850px) {
+    .contenedor {
+        display: grid;
+        grid-template: repeat(6, auto) / 100%;
+        grid-template-areas: "encabezado" 
+                              "menu"
+                              "contenedor-p1"
+                              "contenedor-p3"
+                              "contenedor-p4"
+                              "pie";
+    }
+}
+    .contenedor-p1 img{
+        height: 65vw;
+        margin-bottom: 20px;
+    } */
+
+@media (max-width:360px){ /* 360x640*/
+
+    .encabezado{
+        width: 125%;
+        height: 76px;
+        margin-left: 10px;
+        
+    }
+    .enc-centro{
+        text-align: center;
+    }
+    .menu{
+        
+        margin-left:10px;
+        width: 131%;
+    }
+    .contenedor-p4{
+        top: 120px;
+        width: 300px;
+        margin-left: 70px;
+    }
+    .section{
+        text-align: center;
+        width: 380px;  
+        left: 38px;
+        bottom: -400px;
+               
+    }
+    .consultas{     
+        text-align:center ;  
+    }
+   
+    .contenedor-p3{
+        display: none;
+        
+    }
+    .btn-contacto{
+        margin-top: 120%;
+           
+    }
+    .container{
+        left: 200px;
+    }
+    .pie { 
+        width: 430px;
+        
+             
+    }
+    .iconos{
+        
+        width: 50px;
+        margin-right: 100px;
+        
+        
+    }
+    .contenido_API{
+        margin-right: 150px;
+        margin-left: 50px;
+        width: 310px;
+        
+    }
+}
+
+
+@media (min-width:800px){
+   
+
+}
+
+
+
+
+/* @keyframes boton-menu {
+    0% {transform: scale(1.0);}
+    50% {transform: scale(2.5);}
+    100% {transform: scale(1.0);}
+} */
