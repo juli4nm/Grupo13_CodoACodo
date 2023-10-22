@@ -385,6 +385,7 @@ div h4 {
         margin-left: 70px;
     }
     .section{
+        width: auto;
         text-align: center;
         width: 380px;  
         left: 38px;
@@ -507,13 +508,13 @@ div h4 {
     }
     .contenedor-p4{
         top: 120px;
-        width: 250px;
+        width: auto;
         margin-left: 10px;
     }
     .section{
         text-align: center;
         width: 380px;  
-        left: 270px;
+
         bottom: -1px;
                
     }
@@ -523,8 +524,9 @@ div h4 {
     
     .contenedor-p3{
         
-        width: 20%;
+        width: auto;
         padding-top: -50%;
+        left: 68%;
         
         
     }
@@ -548,7 +550,7 @@ div h4 {
     .contenido_API{
         margin-right: 150px;
         margin-left: 230px;
-        width: 310px;
+        width: auto;
         
     }
 } 
