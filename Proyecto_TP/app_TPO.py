@@ -90,7 +90,21 @@ class Catalogo:
         self.cursor.execute("SELECT * FROM catalogo")
         catalogo = self.cursor.fetchall()
         return catalogo
+    
+#--------------------------------------------------------------------
+@app.route("/catalogo", methods=["GET"])
+def consultar_reserva():
+    reserva = catalogo.consultar_reserva()
+    return jsonify(catalogo)
 
+#--------------------------------------------------------------------
+@app.route("/catalogo/<int:codigo>", methods=["GET"])
+def listar_reserva(codigo):
+    reserva = catalogo.listar_reserva(codigo)
+    if reserva:
+        return jsonify(catalogo), 201
+    else:
+        return "Reserva no encontrada", 404
 
 # Cuerpo del programa
 #--------------------------------------------------------------------
