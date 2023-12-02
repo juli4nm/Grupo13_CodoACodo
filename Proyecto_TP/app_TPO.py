@@ -116,3 +116,25 @@ def agregar_reserva():
         return jsonify({"mensaje": "Reserva ya realidaza"}), 400
 
 #--------------------------------------------------------------------
+#--------------------------------------------------------------------
+@app.route("/Reserva/<int:codigo>", methods=["DELETE"])
+def eliminar_reserva(codigo):
+    # Busco el producto guardado
+    #producto = producto = catalogo.consultar_producto(codigo)
+    # if producto: # Si existe el producto...
+    #     imagen_vieja = producto["imagen_url"]
+    #     # Armo la ruta a la imagen
+    #     ruta_imagen = os.path.join(RUTA_DESTINO, imagen_vieja)
+
+    #     # Y si existe la borro.
+    #     if os.path.exists(ruta_imagen):
+    #         os.remove(ruta_imagen)
+
+    # Luego, elimina el producto del catálogo
+    if catalogo.eliminar_reserva(codigo):
+        return jsonify({"mensaje": "Reserva Cancelada"}), 200
+    else:
+        return jsonify({"mensaje": "Error al Cancelar la Reserva"}), 500
+    
+
+#--------------------------------------------------------------------
