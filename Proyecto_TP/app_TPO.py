@@ -92,13 +92,13 @@ class Catalogo:
         return catalogo
     
 #--------------------------------------------------------------------
-@app.route("/catalogo", methods=["GET"])
+@app.route("/reserva", methods=["GET"])
 def consultar_reserva():
     reserva = catalogo.consultar_reserva()
     return jsonify(catalogo)
 
 #--------------------------------------------------------------------
-@app.route("/catalogo/<int:codigo>", methods=["GET"])
+@app.route("/reserva/<int:codigo>", methods=["GET"])
 def listar_reserva(codigo):
     reserva = catalogo.listar_reserva(codigo)
     if reserva:
