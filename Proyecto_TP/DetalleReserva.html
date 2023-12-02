@@ -54,7 +54,7 @@
                     if (response.ok) {return response.json(); }
                 })
                 .then(function (data) {
-                    let tablaProductos = document.getElementById('tablaProductos');
+                    let tablaProductos = document.getElementById('formulario');
     
                     // Iteramos sobre los productos y agregamos filas a la tabla
                     for (let producto of data) {
