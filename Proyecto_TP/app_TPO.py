@@ -94,21 +94,25 @@ catalogo.agregar_reserva(1, "Juan","Gomez", 11345123 , '12/3/2023', '19/3/2023',
 
 
 #--------------------------------------------------------------------
-@app.route("/productos", methods=["POST"])
+@app.route("/Reserva", methods=["POST"])
 def agregar_reserva():
     #Recojo los datos del form
     codigo = request.form['codigo']
-    descripcion = request.form['descripcion']
-    cantidad = request.form['cantidad']
-    precio = request.form['precio']
-    proveedor = request.form['proveedor']  
+    nombre = request.form['nombre']
+    Apellido = request.form['Apellido']
+    dni = request.form['dni']
+    FeIng = request.form['FeIng']
+    FeEgr = request.form['FeEgr']
+    Hus = request.form['Hus']
+    email = request.form['email']
+    Mensaje = request.form['Mensaje']  
     #imagen = request.files['imagen']
-    nombre_imagen = ""
+    # nombre_imagen = ""
 
-    if catalogo.agregar_producto(codigo, descripcion, cantidad, precio, nombre_imagen, proveedor):
+    if catalogo.agregar_reserva(codigo, nombre, Apellido, dni, FeIng, FeEgr, Hus, email, Mensaje):
         #imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
-        return jsonify({"mensaje": "Producto agregado"}), 201
+        return jsonify({"mensaje": "Reserva realizada"}), 201
     else:
-        return jsonify({"mensaje": "Producto ya existe"}), 400
+        return jsonify({"mensaje": "Reserva ya realidaza"}), 400
 
 #--------------------------------------------------------------------
