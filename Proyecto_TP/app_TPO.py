@@ -80,6 +80,11 @@ class Catalogo:
         self.conn.commit()
         return True
     #---------------------------------------------------------------
+    #consultamos reserva
+    def consultar_reserva(self, codigo):
+        self.cursor.execute(f"SELECT * FROM catalogo WHERE codigo = {codigo}")
+        return self.cursor.fetchall()
+
 
 # Cuerpo del programa
 #--------------------------------------------------------------------
@@ -137,4 +142,4 @@ def eliminar_reserva(codigo):
         return jsonify({"mensaje": "Error al Cancelar la Reserva"}), 500
     
 
-#--------------------------------------------------------------------
+
