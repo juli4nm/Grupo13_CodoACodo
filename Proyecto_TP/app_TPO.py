@@ -83,7 +83,13 @@ class Catalogo:
     #consultamos reserva
     def consultar_reserva(self, codigo):
         self.cursor.execute(f"SELECT * FROM catalogo WHERE codigo = {codigo}")
-        return self.cursor.fetchall()
+        return self.cursor.fetchone()
+    
+    #---------------------------------------------------------------
+    def listar_reserva(self):
+        self.cursor.execute("SELECT * FROM catalogo")
+        catalogo = self.cursor.fetchall()
+        return catalogo
 
 
 # Cuerpo del programa
