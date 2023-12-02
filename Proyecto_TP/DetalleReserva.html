@@ -60,12 +60,16 @@
                     for (let producto of data) {
                         let fila = document.createElement('tr');
                         fila.innerHTML = '<td>' + producto.codigo + '</td>' +
-                            '<td>' + producto.descripcion + '</td>' +
-                            '<td align="right">' + producto.cantidad + '</td>' +
-                            '<td align="right">' + producto.precio + '</td>' +
+                            '<td>' + producto.Nombre + '</td>' +
+                            '<td align="right">' + producto.Apellido + '</td>' +
+                            '<td align="right">' + producto.dni + '</td>' +
+                            '<td align="right">' + producto.FeIng + '</td>' +
+                            '<td align="right">' + producto.FeEgr + '</td>' +
+                            '<td align="right">' + producto.Hus + '</td>' +
+                            '<td align="right">' + producto.email + '</td>' +
                             // Mostrar miniatura de la imagen
                             //'<td><img src=./static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' +
-                            '<td align="right">' + producto.proveedor + '</td>';
+                            '<td align="right">' + producto.Mensaje + '</td>';
                         tablaProductos.appendChild(fila);
                     }
                 })
