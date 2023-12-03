@@ -48,7 +48,7 @@
 <body> 
     <h2>Modificación de reserva</h2>
 
-    <form name="fvalida">
+    <form @submit.prevent="fvalida">
         <label for="codigo">Código de Reserva:</label>
         <input type="text" id="codigo" name="codigo" required><br>
         <br>
@@ -72,9 +72,9 @@
     <br><br>
 
     <script>
-        const URL = "http://127.0.0.1/5001/"
+        //const URL = "http://127.0.0.1/5001/"
         //const URL = "https://arielfsp.pythonanywhere.com/"
-        //const URL = "https://prueba23513.pythonanywhere.com/"
+        const URL = "https://prueba23513.pythonanywhere.com/"
 
         // Capturamos el evento de envío del formulario
         document.getElementById('formulario').addEventListener('submit', function (event) {
