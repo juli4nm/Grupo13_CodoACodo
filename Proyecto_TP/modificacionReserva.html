@@ -105,6 +105,34 @@
                         })
                         .catch(error => console.error('Error:', error));
                 },
+                guardarCambios() {
+                    const formData = new FormData();
+                    formData.append('codigo', this.codigo);
+                    formData.append('descripcion', this.descripcion);
+                    formData.append('cantidad', this.cantidad);
+                    formData.append('proveedor', this.proveedor);
+                    formData.append('precio', this.precio);
+
+                    //if (this.imagenSeleccionada) {
+                    //    formData.append('imagen', this.imagenSeleccionada, this.imagenSeleccionada.name);
+                    //}
+
+                    fetch(URL + 'productos/' + this.codigo, {
+                        method: 'PUT',
+                        body: formData,
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            alert('Producto actualizado correctamente');
+                            this.limpiarFormulario();
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Error al actualizar el producto');
+                        });
+                },
+            },
+        });
 
         // Capturamos el evento de envío del formulario
         document.getElementById('formulario').addEventListener('submit', function (event) {
