@@ -108,14 +108,10 @@
                 guardarCambios() {
                     const formData = new FormData();
                     formData.append('codigo', this.codigo);
-                    formData.append('descripcion', this.descripcion);
-                    formData.append('cantidad', this.cantidad);
-                    formData.append('proveedor', this.proveedor);
-                    formData.append('precio', this.precio);
-
-                    //if (this.imagenSeleccionada) {
-                    //    formData.append('imagen', this.imagenSeleccionada, this.imagenSeleccionada.name);
-                    //}
+                    formData.append('FeIngr', this.FeIngr);
+                    formData.append('FeEgr', this.FeEgr);
+                    formData.append('Hus', this.Hus);
+                    formData.append('Mensaje', this.Mensaje);
 
                     fetch(URL + 'productos/' + this.codigo, {
                         method: 'PUT',
