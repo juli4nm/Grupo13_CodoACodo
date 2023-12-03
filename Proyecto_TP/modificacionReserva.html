@@ -48,6 +48,32 @@
 <body> 
     <h2>Modificación de reserva</h2>
 
+    <form name="fvalida">
+        <label for="codigo">Código de Reserva:</label>
+        <input type="text" id="codigo" name="codigo" required><br>
+        <br>
+        <label for="FeIng">Nueva fecha de ingreso:</label>
+        <br>
+        <input type="date" name="FeIng" id="FeIng" required>
+        <br><br>
+        <label for="FeEgr">Nueva fecha de egreso:</label>
+        <br>
+        <input type="date" name="FeEgr" id="FeEgr" required>
+        <br><br>
+        <label for="Hus">Cantidad de Huspedes:</label>
+        <input type="number" name="Hus" id="Hus" min="1" max="19" required>
+        <br><br>
+        <label for="Mensaje">Mensaje:</label><br>
+        <textarea name="Mensaje" id="Mensaje" cols="40" rows="3" placeholder="Escribe tu consulta"></textarea>
+
+        <!-- Botones para controlar el formulario -->
+        <br><br>
+        <button type="submit">Modificar reserva</button>
+        <a href="index.html">Menu principal</a>
+        <br><br>
+    </form>
+    <br><br>
+
 
         <!-- pie de pagina -->
     <footer class="pie">
