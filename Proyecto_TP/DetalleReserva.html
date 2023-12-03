@@ -49,7 +49,7 @@
             const URL = "https://prueba23513.pythonanywhere.com/"
     
             // Realizamos la solicitud GET al servidor para obtener todos los productos
-            fetch(URL + 'productos')
+            fetch(URL + 'DetalleReserva')
                 .then(function (response) {
                     if (response.ok) {return response.json(); }
                 })
@@ -59,17 +59,17 @@
                     // Iteramos sobre los productos y agregamos filas a la tabla
                     for (let producto of data) {
                         let fila = document.createElement('tr');
-                        fila.innerHTML = '<td>' + producto.codigo + '</td>' +
-                            '<td>' + producto.Nombre + '</td>' +
-                            '<td align="right">' + producto.Apellido + '</td>' +
-                            '<td align="right">' + producto.dni + '</td>' +
-                            '<td align="right">' + producto.FeIng + '</td>' +
-                            '<td align="right">' + producto.FeEgr + '</td>' +
-                            '<td align="right">' + producto.Hus + '</td>' +
-                            '<td align="right">' + producto.email + '</td>' +
+                        fila.innerHTML = '<td>' + reserva.codigo + '</td>' +
+                            '<td>' + reserva.Nombre + '</td>' +
+                            '<td align="right">' + reserva.Apellido + '</td>' +
+                            '<td align="right">' + reserva.dni + '</td>' +
+                            '<td align="right">' + reserva.FeIng + '</td>' +
+                            '<td align="right">' + reserva.FeEgr + '</td>' +
+                            '<td align="right">' + reserva.Hus + '</td>' +
+                            '<td align="right">' + reserva.email + '</td>' +
                             // Mostrar miniatura de la imagen
                             //'<td><img src=./static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' +
-                            '<td align="right">' + producto.Mensaje + '</td>';
+                            '<td align="right">' + reserva.Mensaje + '</td>';
                         tablaProductos.appendChild(fila);
                     }
                 })
