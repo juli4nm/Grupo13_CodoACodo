@@ -88,7 +88,7 @@
             formData.append('Mensaje', document.getElementById('Mensaje').value);
             
 
-            fetch(URL + 'Reserva', {
+            fetch(URL + 'modificacionReserva', {
                 method: 'POST',
                 body: formData // Aquí enviamos formData en lugar de JSON
             })
@@ -96,7 +96,7 @@
                     if (response.ok) { return response.json(); }
                 })
                 .then(function (data) {
-                    alert('Reserva agregada correctamente.');
+                    alert('Modificacion de reserva agregada correctamente.');
                     // Limpiar el formulario para el proximo producto
                     document.getElementById('codigo').value = "";
                     document.getElementById('FeIng').value = "";
@@ -107,7 +107,7 @@
                 })
                 .catch(function (error) {
                     // Mostramos el error, y no limpiamos el form.
-                    alert('Error al agregar la reserva, intente nuevamente.');
+                    alert('Error al modificar la reserva, intente nuevamente.');
                 });
         })
         
