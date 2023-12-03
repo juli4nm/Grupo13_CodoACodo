@@ -60,9 +60,6 @@
         <br>
         <input type="date" name="FeEgr" id="FeEgr" required>
         <br><br>
-        <label for="Hus">Cantidad de Huspedes:</label>
-        <input type="number" name="Hus" id="Hus" min="1" max="19" required>
-        <br><br>
         <label for="Mensaje">Mensaje:</label><br>
         <textarea name="Mensaje" id="Mensaje" cols="40" rows="3" placeholder="Escribe tu consulta"></textarea>
 
@@ -73,6 +70,56 @@
         <br><br>
     </form>
     <br><br>
+
+    <script>
+        const URL = "http://127.0.0.1/5001/"
+        //const URL = "https://arielfsp.pythonanywhere.com/"
+        //const URL = "https://prueba23513.pythonanywhere.com/"
+
+        // Capturamos el evento de envío del formulario
+        document.getElementById('formulario').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitamos que se envie el form 
+
+            var formData = new FormData();
+            formData.append('codigo', document.getElementById('codigo').value);
+            formData.append('Nombre', document.getElementById('Nombre').value);
+            formData.append('Apellido', document.getElementById('Apellido').value);
+            formData.append('dni', document.getElementById('dni').value);
+            formData.append('FeIng', document.getElementById('FeIng').value);
+            formData.append('FeEgr', document.getElementById('FeEgr').value);
+            formData.append('Hus', document.getElementById('Hus').value);
+            formData.append('email', document.getElementById('email').value);
+            formData.append('Mensaje', document.getElementById('Mensaje').value);
+            //formData.append('imagen', document.getElementById('imagenProducto').files[0]);
+
+            fetch(URL + 'Reserva', {
+                method: 'POST',
+                body: formData // Aquí enviamos formData en lugar de JSON
+            })
+                .then(function (response) {
+                    if (response.ok) { return response.json(); }
+                })
+                .then(function (data) {
+                    alert('Reserva agregada correctamente.');
+                    // Limpiar el formulario para el proximo producto
+                    document.getElementById('codigo').value = "";
+                    document.getElementById('Nombre').value = "";
+                    document.getElementById('Apellido').value = "";
+                    document.getElementById('dni').value = "";
+                    document.getElementById('FeIng').value = "";
+                    document.getElementById('FeEgr').value = "";
+                    document.getElementById('Hus').value = "";
+                    document.getElementById('email').value = "";
+                    //document.getElementById('imagen').value = "";
+                    document.getElementById('Mensaje').value = "";
+                })
+                .catch(function (error) {
+                    // Mostramos el error, y no limpiamos el form.
+                    alert('Error al agregar la reserva, intente nuevamente.');
+                });
+        })
+        
+    </script>
 
 
         <!-- pie de pagina -->
