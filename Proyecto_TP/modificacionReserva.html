@@ -48,7 +48,7 @@
 <body> 
     <h2>Modificación de reserva</h2>
 
-    <form @submit.prevent="fvalida">
+    <form @submit.prevent="obtenerModificacion">
         <label for="codigo">Código de Reserva:</label>
         <input type="text" id="codigo" name="codigo" required><br>
         <br>
@@ -71,10 +71,40 @@
     </form>
     <br><br>
 
+    <script src="https://unpkg.com/vue@next"></script>
     <script>
         //const URL = "http://127.0.0.1/5001/"
         //const URL = "https://arielfsp.pythonanywhere.com/"
         const URL = "https://prueba23513.pythonanywhere.com/"
+
+        const app = Vue.createApp({
+            data() {
+                return {
+                    codigo: '',
+                    FeIng: '',
+                    FeEgr: '',
+                    Hus: '',
+                    Mensaje: '',
+                    imagen_url: '',
+                    imagenUrlTemp: null,
+                    mostrarDatosProducto: false,
+                };
+            },
+            methods: {
+                obtenerModificacion() {
+                    console.log(URL + 'productos/' + this.codigo)
+                    fetch(URL + 'productos/' + this.codigo)
+                        .then(response => response.json())
+                        .then(data => {
+                            this.FeIng = data.FeIng;
+                            this.FeEgr = data.FeEgr;
+                            this.Hus = data.Hus;
+                            this.Mensaje = data.Mensaje;
+                            this.imagen_url =  "" //data.imagen_url;
+                            this.mostrarDatosProducto = true;
+                        })
+                        .catch(error => console.error('Error:', error));
+                },
 
         // Capturamos el evento de envío del formulario
         document.getElementById('formulario').addEventListener('submit', function (event) {
@@ -131,7 +161,3 @@
     </footer>
 
 </body>
-
-
-
-        
