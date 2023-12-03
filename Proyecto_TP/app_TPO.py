@@ -106,6 +106,7 @@ def listar_reserva(codigo):
     else:
         return "Reserva no encontrada", 404
 
+
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
@@ -113,11 +114,16 @@ def listar_reserva(codigo):
 catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_TPO')
 #catalogo = Catalogo(host='arielfsp.mysql.pythonanywhere-services.com', user='arielfsp', password='1234qw12', database='arielfsp$miapp')
 
-catalogo.agregar_reserva(1, "Juan","Gomez", 11345123 , '12/3/2023', '19/3/2023', 4, 'juangomez@hotmial.com', 'desayuno incluido')
-# catalogo.agregar_producto(2, "Notebook",11, 740000, "compu.jpg",1)
+#catalogo.agregar_reserva(1, "Juan","Gomez", 11345123 , '12/3/2023', '19/3/2023', 4, 'juangomez@hotmial.com', 'desayuno incluido')
+catalogo.consultar_reserva(1)
 # catalogo.agregar_producto(3, "Mouse tres botones",11, 3400, "mouse.jpg",1)
 
+print (catalogo.consultar_reserva(2))
 
+
+
+
+#--------------------------------------------------------------------
 #--------------------------------------------------------------------
 @app.route("/Reserva", methods=["POST"])
 def agregar_reserva():
@@ -138,10 +144,10 @@ def agregar_reserva():
         #imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
         return jsonify({"mensaje": "Reserva realizada"}), 201
     else:
-        return jsonify({"mensaje": "Reserva ya realidaza"}), 400
+        return jsonify({"mensaje": "Error reserva ya existente"}), 400
 
 #--------------------------------------------------------------------
-#--------------------------------------------------------------------
+
 @app.route("/Reserva/<int:codigo>", methods=["DELETE"])
 def eliminar_reserva(codigo):
     # Busco el producto guardado
