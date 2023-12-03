@@ -91,6 +91,24 @@ class Catalogo:
         catalogo = self.cursor.fetchall()
         return catalogo
     
+
+ #----------------------------------------------------------------
+    def eliminar_Reserva(self, codigo):
+        # Eliminamos un producto de la tabla a partir de su código
+        self.cursor.execute(f"DELETE FROM Reserva WHERE codigo = {codigo}")
+        self.conn.commit()
+        return self.cursor.rowcount > 0
+
+    #----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
 #--------------------------------------------------------------------
 @app.route("/reserva", methods=["GET"])
 def consultar_reserva():

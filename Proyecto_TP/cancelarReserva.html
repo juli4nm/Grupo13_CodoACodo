@@ -62,7 +62,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="producto in productos">
+                        <tr v-for="reserva in Reserva">
                             <td>{{ reserva.codigo }}</td>
                             <td>{{ reserva.nombre }}</td>
                             <td>{{ reserva.Apellido }}</td>
@@ -100,9 +100,9 @@
 
                 <script src="https://unpkg.com/vue@next"></script>
                 <script>
-                    //const URL = "http://127.0.0.1:5000/"
+                    const URL = "http://127.0.0.1:5001/"
                     //const URL = "https://arielfsp.pythonanywhere.com/"
-                    const URL = "https://prueba23513.pythonanywhere.com/"
+                    //const URL = "https://prueba23513.pythonanywhere.com/"
 
                     const app = Vue.createApp({
                         data() {
