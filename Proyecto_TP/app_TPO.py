@@ -110,7 +110,7 @@ class Catalogo:
 
 
 #--------------------------------------------------------------------
-@app.route("/reserva", methods=["GET"])
+@app.route("/reserva", methods=["GET",])
 def consultar_reserva():
     reserva = catalogo.consultar_reserva()
     return jsonify(catalogo)
@@ -133,10 +133,10 @@ catalogo = Catalogo(host='localhost', port='3307', user='root', password='', dat
 #catalogo = Catalogo(host='arielfsp.mysql.pythonanywhere-services.com', user='arielfsp', password='1234qw12', database='arielfsp$miapp')
 
 #catalogo.agregar_reserva(1, "Juan","Gomez", 11345123 , '12/3/2023', '19/3/2023', 4, 'juangomez@hotmial.com', 'desayuno incluido')
-catalogo.consultar_reserva(1)
+#catalogo.consultar_reserva(1)
 # catalogo.agregar_producto(3, "Mouse tres botones",11, 3400, "mouse.jpg",1)
 
-print (catalogo.consultar_reserva(2))
+#print (catalogo.consultar_reserva(2))
 
 
 

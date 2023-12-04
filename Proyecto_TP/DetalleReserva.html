@@ -42,28 +42,39 @@
             </ul>
 
         </nav>
-        <h1>Listado de Reservas</h1>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>                
-                    <th>dni</th>
-                    <!-- <th>Imagen</th> -->
-                    <th>Fecha Ing</th>
-                    <th>Fecha Egr</th>
-                    <th>Cantidad Huespedes</th>
-                    <th>email</th>
-                </tr>
-            </thead>
-            <tbody id="Reserva"> </tbody>
-        </table>
-    
-        <div class="contenedor-centrado">
-            <a href="contacto.html">Volver</a>
-        </div>
+        <h2>Listado de Reserva</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>nombre</th>
+                            <th>Apellido</th>
+                            <th>dni</th>
+                            <th>Cantidad_Huespedes</th>
+                            <th align="right">FeIng</th>
+                            <th align="right">FeEgr</th>
+                            <th>email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="reserva in Reserva">
+                            <td>{{ codigo }}</td>
+                            <td>{{ reserva.nombre }}</td>
+                            <td>{{ reserva.Apellido }}</td>
+                            <td>{{ reserva.dni }}</td>
+                            <td>{{ reserva.cantidad_Huspedes }}</td>
+                            <td align="right">{{ reserva.FeIng }}</td>
+                            <td align="right">{{ reserva.FeEgr }}</td>
+                            <td>{{ reserva.email }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="contenedor-centrado">
+                    <a href="contacto.html">Volver</a>
+                    <br><br>
+                </div>
 
         <script>
             //const URL = "http://127.0.0.1:5000/"
