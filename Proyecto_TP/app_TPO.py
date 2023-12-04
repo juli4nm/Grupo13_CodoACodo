@@ -82,12 +82,12 @@ class Catalogo:
     #---------------------------------------------------------------
     #consultamos reserva
     def consultar_reserva(self, codigo):
-        self.cursor.execute(f"SELECT * FROM catalogo WHERE codigo = {codigo}")
+        self.cursor.execute(f"SELECT * FROM Reserva WHERE codigo = {codigo}")
         return self.cursor.fetchone()
     
     #---------------------------------------------------------------
     def listar_reserva(self):
-        self.cursor.execute("SELECT * FROM catalogo")
+        self.cursor.execute("SELECT * FROM Reserva")
         catalogo = self.cursor.fetchall()
         return catalogo
     
