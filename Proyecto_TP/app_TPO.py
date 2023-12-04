@@ -53,8 +53,8 @@ class Catalogo:
             nombre VARCHAR (60) NOT NULL,
             Apellido VARCHAR (60) NOT NULL,
             dni INT NOT NULL,
-            FeIng DATETIME NOT NULL,
-            FeEgr DATETIME NOT NULL,
+            FeIng DATE NOT NULL,
+            FeEgr DATE NOT NULL,
             Hus INT NOT NULL,
             email  VARCHAR(60) NOT NULL,
             mensaje VARCHAR(255))''')
@@ -109,34 +109,19 @@ class Catalogo:
 
 
 
-#--------------------------------------------------------------------
-@app.route("/reserva", methods=["GET",])
-def consultar_reserva():
-    reserva = catalogo.consultar_reserva()
-    return jsonify(catalogo)
-
-#--------------------------------------------------------------------
-@app.route("/reserva/<int:codigo>", methods=["GET"])
-def listar_reserva(codigo):
-    reserva = catalogo.listar_reserva(codigo)
-    if reserva:
-        return jsonify(catalogo), 201
-    else:
-        return "Reserva no encontrada", 404
-
-
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
 
-catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_TPO')
+catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_tpo')
 #catalogo = Catalogo(host='arielfsp.mysql.pythonanywhere-services.com', user='arielfsp', password='1234qw12', database='arielfsp$miapp')
 
-#catalogo.agregar_reserva(1, "Juan","Gomez", 11345123 , '12/3/2023', '19/3/2023', 4, 'juangomez@hotmial.com', 'desayuno incluido')
+#catalogo.agregar_reserva(123, "Miguel","Suarez", 25785123 , '2023-12-1', '2023-12-4', 1, 'MiguelSuarez@hotmial.com', 'desayuno incluido')
 #catalogo.consultar_reserva(1)
 # catalogo.agregar_producto(3, "Mouse tres botones",11, 3400, "mouse.jpg",1)
+catalogo.eliminar_Reserva (13)
+#print (catalogo.consultar_reserva(123))
 
-#print (catalogo.consultar_reserva(2))
 
 
 
@@ -164,7 +149,25 @@ def agregar_reserva():
     else:
         return jsonify({"mensaje": "Error reserva ya existente"}), 400
 
+
+
 #--------------------------------------------------------------------
+@app.route("/reserva", methods=["GET",])
+def consultar_reserva():
+    reserva = catalogo.consultar_reserva()
+    return jsonify(catalogo)
+
+#--------------------------------------------------------------------
+@app.route("/reserva/<int:codigo>", methods=["GET"])
+def listar_reserva(codigo):
+    reserva = catalogo.listar_reserva(codigo)
+    if reserva:
+        return jsonify(catalogo), 201
+    else:
+        return "Reserva no encontrada", 404
+
+#--------------------------------------------------------------------
+
 
 @app.route("/Reserva/<int:codigo>", methods=["DELETE"])
 def eliminar_reserva(codigo):
