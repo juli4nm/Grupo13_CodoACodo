@@ -114,8 +114,6 @@ class Catalogo:
 
 
 
-
-
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
@@ -171,19 +169,9 @@ def listar_reserva(Codigo):
     reserva = catalogo.listar_reserva(Codigo)
     if reserva:
         return jsonify(Catalogo), 201
-=======
-@app.route("/reserva/<int:codigo>", methods=["GET"])
-def listar_reserva(codigo):
-    reservas = catalogo.listar_reserva(codigo)
-    if reservas:
-        return jsonify(catalogo), 201
->>>>>>> Stashed changes
-    else:
+
         return "Reserva no encontrada", 404
     
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
 #--------------------------------------------------------------------
 
 
@@ -208,3 +196,5 @@ def eliminar_reserva(Codigo):
     
 #--------------------------------------------------------------------
 
+if __name__ == "__main__":
+    app.run(debug=True)
