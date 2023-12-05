@@ -118,10 +118,10 @@ class Catalogo:
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
 
-catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_tpo')
+catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_TPO')
 #catalogo = Catalogo(host='arielfsp.mysql.pythonanywhere-services.com', user='arielfsp', password='1234qw12', database='arielfsp$miapp')
 
-#catalogo.agregar_reserva(123, "Miguel","Suarez", 25785123 , '2023-12-1', '2023-12-4', 1, 'MiguelSuarez@hotmial.com', 'desayuno incluido')
+catalogo.agregar_reserva(123, "Miguel","Suarez", 25785123 , '2023-12-1', '2023-12-4', 1, 'MiguelSuarez@hotmial.com', 'desayuno incluido')
 #catalogo.consultar_reserva(1)
 # catalogo.agregar_producto(3, "Mouse tres botones",11, 3400, "mouse.jpg",1)
 #catalogo.eliminar_Reserva (13)
@@ -148,7 +148,7 @@ def agregar_reserva():
     #imagen = request.files['imagen']
     # nombre_imagen = ""
 
-    if Catalogo.agregar_reserva(Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
+    if catalogo.agregar_reserva(Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
         #imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
         return jsonify({"Mensaje": "Reserva realizada"}), 201
     else:
@@ -159,26 +159,26 @@ def agregar_reserva():
 #--------------------------------------------------------------------
 @app.route("/reserva", methods=["GET",])
 def consultar_reserva():
-    reserva = catalogo.consultar_reserva()
-    return jsonify(Catalogo)
+    catalogo = Catalogo.consultar_reserva()
+    return jsonify(catalogo)
 
 #--------------------------------------------------------------------
-<<<<<<< Updated upstream
 @app.route("/reserva/<int:Codigo>", methods=["GET"])
 def listar_reserva(Codigo):
-    reserva = catalogo.listar_reserva(Codigo)
+    reserva = Catalogo.listar_reserva(Codigo)
     if reserva:
+<<<<<<< HEAD
         return jsonify(Catalogo), 201
 
         return "Reserva no encontrada", 404
     
-#--------------------------------------------------------------------
+
 
 
 @app.route("/reserva/<int:codigo>", methods=["DELETE"])
 def eliminar_reserva(Codigo):
     # Busco el producto guardado
-    reserva = catalogo.consultar_reserva(codigo)
+    #producto = producto = catalogo.consultar_producto(codigo)
     # if producto: # Si existe el producto...
     #     imagen_vieja = producto["imagen_url"]
     #     # Armo la ruta a la imagen
@@ -194,7 +194,7 @@ def eliminar_reserva(Codigo):
     else:
         return jsonify({"mensaje": "Error al Cancelar la Reserva"}), 500
     
-#--------------------------------------------------------------------
+
 
 if __name__ == "__main__":
     app.run(debug=True)
