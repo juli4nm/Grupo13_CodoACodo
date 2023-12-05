@@ -120,7 +120,7 @@ class Catalogo:
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
 
-catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_tpo')
+catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='reserva')
 #catalogo = Catalogo(host='arielfsp.mysql.pythonanywhere-services.com', user='arielfsp', password='1234qw12', database='arielfsp$miapp')
 
 #catalogo.agregar_reserva(123, "Miguel","Suarez", 25785123 , '2023-12-1', '2023-12-4', 1, 'MiguelSuarez@hotmial.com', 'desayuno incluido')
@@ -150,7 +150,7 @@ def agregar_reserva():
     #imagen = request.files['imagen']
     # nombre_imagen = ""
 
-    if Catalogo.agregar_reserva(Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
+    if catalogo.agregar_reserva(Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
         #imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
         return jsonify({"Mensaje": "Reserva realizada"}), 201
     else:
@@ -161,15 +161,15 @@ def agregar_reserva():
 #--------------------------------------------------------------------
 @app.route("/reserva", methods=["GET",])
 def consultar_reserva():
-    reserva = catalogo.consultar_reserva()
-    return jsonify(Catalogo)
+    catalogo = Catalogo.consultar_reserva()
+    return jsonify(catalogo)
 
 #--------------------------------------------------------------------
 @app.route("/reserva/<int:Codigo>", methods=["GET"])
 def listar_reserva(Codigo):
-    reserva = catalogo.listar_reserva(Codigo)
+    reserva = Catalogo.listar_reserva(Codigo)
     if reserva:
-        return jsonify(Catalogo), 201
+        return jsonify(catalogo), 201
     else:
         return "Reserva no encontrada", 404
 

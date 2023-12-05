@@ -89,7 +89,7 @@
                 document.getElementById('formulario').addEventListener('submit', function (event) {
                     event.preventDefault(); // Evitamos que se envie el form 
 
-                    var formData = new FormData();
+                    let formData = new FormData();
                     formData.append('Codigo', document.getElementById('Codigo').value);
                     formData.append('Nombre', document.getElementById('Nombre').value);
                     formData.append('Apellido', document.getElementById('Apellido').value);
@@ -101,7 +101,7 @@
                     formData.append('Mensaje', document.getElementById('Mensaje').value);
                     //formData.append('imagen', document.getElementById('imagenProducto').files[0]);
 
-                    fetch(URL + 'Proyecto_TP/reserva', {
+                    fetch(URL + 'reserva', {
                         method: 'POST',
                         body: formData // Aquí enviamos formData en lugar de JSON
                     })
