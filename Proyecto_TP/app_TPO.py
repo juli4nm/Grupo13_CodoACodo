@@ -32,7 +32,8 @@ class Catalogo:
             host=host,
             port= 3307,
             user=user,
-            password=password
+            password=password,
+            database=database
         )
         self.cursor = self.conn.cursor()
 
@@ -119,7 +120,7 @@ catalogo = Catalogo(host='localhost', port='3307', user='root', password='', dat
 #catalogo.agregar_reserva(123, "Miguel","Suarez", 25785123 , '2023-12-1', '2023-12-4', 1, 'MiguelSuarez@hotmial.com', 'desayuno incluido')
 #catalogo.consultar_reserva(1)
 # catalogo.agregar_producto(3, "Mouse tres botones",11, 3400, "mouse.jpg",1)
-catalogo.eliminar_Reserva (13)
+#catalogo.eliminar_Reserva (13)
 #print (catalogo.consultar_reserva(123))
 
 
