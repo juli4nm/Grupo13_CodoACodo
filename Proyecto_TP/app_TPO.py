@@ -165,13 +165,24 @@ def consultar_reserva():
     return jsonify(Catalogo)
 
 #--------------------------------------------------------------------
+<<<<<<< Updated upstream
 @app.route("/reserva/<int:Codigo>", methods=["GET"])
 def listar_reserva(Codigo):
     reserva = catalogo.listar_reserva(Codigo)
     if reserva:
         return jsonify(Catalogo), 201
+=======
+@app.route("/reserva/<int:codigo>", methods=["GET"])
+def listar_reserva(codigo):
+    reservas = catalogo.listar_reserva(codigo)
+    if reservas:
+        return jsonify(catalogo), 201
+>>>>>>> Stashed changes
     else:
         return "Reserva no encontrada", 404
+    
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
 #--------------------------------------------------------------------
 
@@ -179,7 +190,7 @@ def listar_reserva(Codigo):
 @app.route("/reserva/<int:codigo>", methods=["DELETE"])
 def eliminar_reserva(Codigo):
     # Busco el producto guardado
-    #producto = producto = catalogo.consultar_producto(codigo)
+    reserva = catalogo.consultar_reserva(codigo)
     # if producto: # Si existe el producto...
     #     imagen_vieja = producto["imagen_url"]
     #     # Armo la ruta a la imagen
@@ -195,5 +206,5 @@ def eliminar_reserva(Codigo):
     else:
         return jsonify({"mensaje": "Error al Cancelar la Reserva"}), 500
     
-
+#--------------------------------------------------------------------
 

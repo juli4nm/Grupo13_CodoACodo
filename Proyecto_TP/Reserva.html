@@ -46,9 +46,16 @@
         <body>
             <h2>Ingresa tus datos para Reservar</h2>
 
+<<<<<<< Updated upstream
             <form id="formulario" name="fvalida">
                 <label for="Codigo">Código de Reserva:</label>
                 <input type="text" id="Codigo" name="Codigo" required><br>
+=======
+            <form id="formulario" enctype="multipart/form-data">
+                <label for="codigo">Código de Reserva:</label>
+                <input type="text" id="codigo" name="codigo" required>
+                <br>
+>>>>>>> Stashed changes
                 <label for="Nombre">Nombre:</label>
                 <input type="text" name="nombre" id="Nombre" size="15" required>
                 <br> <br>
@@ -89,8 +96,13 @@
                 document.getElementById('formulario').addEventListener('submit', function (event) {
                     event.preventDefault(); // Evitamos que se envie el form 
 
+<<<<<<< Updated upstream
                     var formData = new FormData();
                     formData.append('Codigo', document.getElementById('Codigo').value);
+=======
+                    let formData = new FormData();
+                    formData.append('codigo', document.getElementById('codigo').value);
+>>>>>>> Stashed changes
                     formData.append('Nombre', document.getElementById('Nombre').value);
                     formData.append('Apellido', document.getElementById('Apellido').value);
                     formData.append('dni', document.getElementById('dni').value);
@@ -101,7 +113,11 @@
                     formData.append('Mensaje', document.getElementById('Mensaje').value);
                     //formData.append('imagen', document.getElementById('imagenProducto').files[0]);
 
+<<<<<<< Updated upstream
                     fetch(URL + 'Proyecto_TP/reserva', {
+=======
+                    fetch(URL + '/Reserva', {
+>>>>>>> Stashed changes
                         method: 'POST',
                         body: formData // Aquí enviamos formData en lugar de JSON
                     })
