@@ -101,7 +101,7 @@
                     formData.append('Mensaje', document.getElementById('Mensaje').value);
                     //formData.append('imagen', document.getElementById('imagenProducto').files[0]);
 
-                    fetch(URL + 'reserva', {
+                    fetch(URL + 'Proyecto_TP/reserva', {
                         method: 'POST',
                         body: formData // Aquí enviamos formData en lugar de JSON
                     })
@@ -111,7 +111,7 @@
                         .then(function (data) {
                             alert('Reserva agregada correctamente.');
                             // Limpiar el formulario para el proximo producto
-                            document.getElementById('codigo').value = "";
+                            document.getElementById('Codigo').value = "";
                             document.getElementById('Nombre').value = "";
                             document.getElementById('Apellido').value = "";
                             document.getElementById('dni').value = "";
