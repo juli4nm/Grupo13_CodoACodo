@@ -208,11 +208,11 @@ border-radius: 5px;
 .section {
     background-color: white;
     padding: 10px;
-    border-radius: 5%;
+    border-radius: 3%;
     align-items: center;
     position: relative;
     min-height: 1px;
-    border: 1px solid lightslategray;
+    border: 2px solid lightslategray;
    /* margin: 0px 100px 0px 300px;*/
     justify-content: center;
     display: grid;
