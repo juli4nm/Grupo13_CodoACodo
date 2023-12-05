@@ -49,7 +49,7 @@ class Catalogo:
                 raise err
 
         # Una vez que la base de datos está establecida, creamos la tabla si no existe
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS Reserva (
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS reserva (
             Codigo INT AUTO_INCREMENT primary key,
             Nombre VARCHAR (60) NOT NULL,
             Apellido VARCHAR (60) NOT NULL,
@@ -68,12 +68,12 @@ class Catalogo:
     #----------------------------------------------------------------
     def agregar_reserva(self, Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
         # Verificamos si ya existe una Reserva con el mismo código
-        self.cursor.execute(f"SELECT * FROM Reserva WHERE codigo = {Codigo}")
+        self.cursor.execute(f"SELECT * FROM reserva WHERE codigo = {Codigo}")
         Reserva_existe = self.cursor.fetchone()
         if Reserva_existe:
             return False
 
-        sql = "INSERT INTO Reserva Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje) VALUES (%s, %s, %s, %s, %s, %s,%s, %s, %s)"
+        sql = "INSERT INTO reserva (Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje) VALUES (%s, %s, %s, %s, %s, %s,%s, %s, %s)"
         valores = ({Codigo}, {Nombre}, {Apellido}, {dni}, {FeIng}, {FeEgr}, {Hus}, {Email}, {Mensaje}
         )
 
@@ -83,12 +83,12 @@ class Catalogo:
     #---------------------------------------------------------------
     #consultamos reserva
     def consultar_reserva(self, Codigo):
-        self.cursor.execute(f"SELECT * FROM Reserva WHERE codigo = {Codigo}")
+        self.cursor.execute(f"SELECT * FROM reserva WHERE codigo = {Codigo}")
         return self.cursor.fetchone()
     
     #---------------------------------------------------------------
     def listar_reserva(self):
-        self.cursor.execute("SELECT * FROM Reserva")
+        self.cursor.execute("SELECT * FROM reserva")
         catalogo = self.cursor.fetchall()
         return catalogo
     
@@ -96,7 +96,7 @@ class Catalogo:
  #----------------------------------------------------------------
     def eliminar_Reserva(self, Codigo):
         # Eliminamos un producto de la tabla a partir de su código
-        self.cursor.execute(f"DELETE FROM Reserva WHERE codigo = {Codigo}")
+        self.cursor.execute(f"DELETE FROM reserva WHERE codigo = {Codigo}")
         self.conn.commit()
         return self.cursor.rowcount > 0
 
@@ -135,7 +135,7 @@ catalogo = Catalogo(host='localhost', port='3307', user='root', password='', dat
 
 #--------------------------------------------------------------------
 #--------------------------------------------------------------------
-@app.route("/Reserva", methods=["POST"])
+@app.route("/reserva", methods=["POST"])
 def agregar_reserva():
     #Recojo los datos del form
     Codigo = request.form['Codigo']
@@ -150,7 +150,7 @@ def agregar_reserva():
     #imagen = request.files['imagen']
     # nombre_imagen = ""
 
-    if catalogo.agregar_reserva(Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
+    if Catalogo.agregar_reserva(Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
         #imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
         return jsonify({"Mensaje": "Reserva realizada"}), 201
     else:
@@ -162,21 +162,21 @@ def agregar_reserva():
 @app.route("/reserva", methods=["GET",])
 def consultar_reserva():
     reserva = catalogo.consultar_reserva()
-    return jsonify(catalogo)
+    return jsonify(Catalogo)
 
 #--------------------------------------------------------------------
-@app.route("/reserva/<int:codigo>", methods=["GET"])
+@app.route("/reserva/<int:Codigo>", methods=["GET"])
 def listar_reserva(Codigo):
     reserva = catalogo.listar_reserva(Codigo)
     if reserva:
-        return jsonify(catalogo), 201
+        return jsonify(Catalogo), 201
     else:
         return "Reserva no encontrada", 404
 
 #--------------------------------------------------------------------
 
 
-@app.route("/Reserva/<int:codigo>", methods=["DELETE"])
+@app.route("/reserva/<int:codigo>", methods=["DELETE"])
 def eliminar_reserva(Codigo):
     # Busco el producto guardado
     #producto = producto = catalogo.consultar_producto(codigo)

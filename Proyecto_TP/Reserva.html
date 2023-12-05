@@ -101,7 +101,7 @@
                     formData.append('Mensaje', document.getElementById('Mensaje').value);
                     //formData.append('imagen', document.getElementById('imagenProducto').files[0]);
 
-                    fetch(URL + 'Proyecto_TP/Reserva', {
+                    fetch(URL + 'reserva', {
                         method: 'POST',
                         body: formData // Aquí enviamos formData en lugar de JSON
                     })

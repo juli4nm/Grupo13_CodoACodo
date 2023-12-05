@@ -48,26 +48,16 @@
                     <thead>
                         <tr>
                             <th>Código</th>
-                            <th>nombre</th>
+                            <th>Nombre</th>
                             <th>Apellido</th>
                             <th>dni</th>
-                            <th>Cantidad_Huespedes</th>
+                            <th>Huespedes</th>
                             <th align="right">FeIng</th>
                             <th align="right">FeEgr</th>
                             <th>email</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr v-for="reserva in Reserva">
-                            <td>{{ codigo }}</td>
-                            <td>{{ reserva.nombre }}</td>
-                            <td>{{ reserva.Apellido }}</td>
-                            <td>{{ reserva.dni }}</td>
-                            <td>{{ reserva.cantidad_Huspedes }}</td>
-                            <td align="right">{{ reserva.FeIng }}</td>
-                            <td align="right">{{ reserva.FeEgr }}</td>
-                            <td>{{ reserva.email }}</td>
-                        </tr>
+                    <tbody id="tablaProductos"> 
                     </tbody>
                 </table>
 
@@ -77,29 +67,29 @@
                 </div>
 
         <script>
-            //const URL = "http://127.0.0.1:5000/"
+            const URL = "http://127.0.0.1:5000/"
             //const URL = "https://arielfsp.pythonanywhere.com/"
-            const URL = "https://prueba23513.pythonanywhere.com/"
+            //const URL = "https://prueba23513.pythonanywhere.com/"
     
             // Realizamos la solicitud GET al servidor para obtener todos los productos
-            fetch(URL + 'DetalleReserva')
+            fetch(URL + 'reserva')
                 .then(function (response) {
                     if (response.ok) {return response.json(); }
                 })
                 .then(function (data) {
-                    let tablaProductos = document.getElementById('formulario');
+                    let tablaProductos = document.getElementById('tablaProductos');
     
                     // Iteramos sobre los productos y agregamos filas a la tabla
-                    for (let producto of data) {
+                    for (let reserva of data) {
                         let fila = document.createElement('tr');
-                        fila.innerHTML = '<td>' + reserva.codigo + '</td>' +
+                        fila.innerHTML = '<td>' + reserva.Codigo + '</td>' +
                             '<td>' + reserva.Nombre + '</td>' +
                             '<td align="right">' + reserva.Apellido + '</td>' +
                             '<td align="right">' + reserva.dni + '</td>' +
                             '<td align="right">' + reserva.FeIng + '</td>' +
                             '<td align="right">' + reserva.FeEgr + '</td>' +
                             '<td align="right">' + reserva.Hus + '</td>' +
-                            '<td align="right">' + reserva.email + '</td>' +
+                            '<td align="right">' + reserva.Email + '</td>' +
                             // Mostrar miniatura de la imagen
                             //'<td><img src=./static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' +
                             '<td align="right">' + reserva.Mensaje + '</td>';
