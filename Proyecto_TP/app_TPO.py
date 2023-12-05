@@ -33,7 +33,7 @@ class Catalogo:
             port= 3307,
             user=user,
             password=password,
-            database=database
+            #database=database
         )
         self.cursor = self.conn.cursor(dictionary=True)
 
@@ -50,15 +50,15 @@ class Catalogo:
 
         # Una vez que la base de datos está establecida, creamos la tabla si no existe
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS Reserva (
-            codigo INT AUTO_INCREMENT primary key,
-            nombre VARCHAR (60) NOT NULL,
+            Codigo INT AUTO_INCREMENT primary key,
+            Nombre VARCHAR (60) NOT NULL,
             Apellido VARCHAR (60) NOT NULL,
             dni INT NOT NULL,
             FeIng DATE NOT NULL,
             FeEgr DATE NOT NULL,
             Hus INT NOT NULL,
-            email  VARCHAR(60) NOT NULL,
-            mensaje VARCHAR(255))''')
+            Email  VARCHAR(60) NOT NULL,
+            Mensaje VARCHAR(255))''')
         self.conn.commit()
 
         # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
@@ -66,15 +66,15 @@ class Catalogo:
         self.cursor = self.conn.cursor(dictionary=True)
         
     #----------------------------------------------------------------
-    def agregar_reserva(self, codigo, nombre, Apellido, dni, FeIng, FeEgr, Hus, email, Mensaje):
+    def agregar_reserva(self, Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
         # Verificamos si ya existe una Reserva con el mismo código
-        self.cursor.execute(f"SELECT * FROM Reserva WHERE codigo = {codigo}")
+        self.cursor.execute(f"SELECT * FROM Reserva WHERE codigo = {Codigo}")
         Reserva_existe = self.cursor.fetchone()
         if Reserva_existe:
             return False
 
-        sql = "INSERT INTO Reserva (codigo, nombre, Apellido, dni, FeIng, FeEgr, Hus, email, Mensaje) VALUES (%s, %s, %s, %s, %s, %s,%s, %s, %s)"
-        valores = ({codigo}, {nombre}, {Apellido}, {dni}, {FeIng}, {FeEgr}, {Hus}, {email}, {Mensaje}
+        sql = "INSERT INTO Reserva Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje) VALUES (%s, %s, %s, %s, %s, %s,%s, %s, %s)"
+        valores = ({Codigo}, {Nombre}, {Apellido}, {dni}, {FeIng}, {FeEgr}, {Hus}, {Email}, {Mensaje}
         )
 
         self.cursor.execute(sql, valores)        
@@ -82,8 +82,8 @@ class Catalogo:
         return True
     #---------------------------------------------------------------
     #consultamos reserva
-    def consultar_reserva(self, codigo):
-        self.cursor.execute(f"SELECT * FROM Reserva WHERE codigo = {codigo}")
+    def consultar_reserva(self, Codigo):
+        self.cursor.execute(f"SELECT * FROM Reserva WHERE codigo = {Codigo}")
         return self.cursor.fetchone()
     
     #---------------------------------------------------------------
@@ -94,15 +94,15 @@ class Catalogo:
     
 
  #----------------------------------------------------------------
-    def eliminar_Reserva(self, codigo):
+    def eliminar_Reserva(self, Codigo):
         # Eliminamos un producto de la tabla a partir de su código
-        self.cursor.execute(f"DELETE FROM Reserva WHERE codigo = {codigo}")
+        self.cursor.execute(f"DELETE FROM Reserva WHERE codigo = {Codigo}")
         self.conn.commit()
         return self.cursor.rowcount > 0
 
     #----------------------------------------------------------------
-    def modificar_reserva(self, codigo, nombre, Apellido, dni, FeIng, FeEgr, Hus, email, Mensaje):
-        sql = f"UPDATE Reserva SET codigo = {codigo}, nombre = '{nombre}', Apellido = {Apellido}, dni = {dni}, FeIng = {FeIng}, FeEgr = {FeEgr}, Hus = {Hus}, email = {email}, Mensaje = {Mensaje}, WHERE codigo = {codigo}"
+    def modificar_reserva(self, Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
+        sql = f"UPDATE Reserva SET codigo = {Codigo}, Nombre = '{Nombre}', Apellido = {Apellido}, dni = {dni}, FeIng = {FeIng}, FeEgr = {FeEgr}, Hus = {Hus}, Email = {Email}, Mensaje = {Mensaje}, WHERE codigo = {Codigo}"
     
 
         self.cursor.execute(sql)        
@@ -138,23 +138,23 @@ catalogo = Catalogo(host='localhost', port='3307', user='root', password='', dat
 @app.route("/Reserva", methods=["POST"])
 def agregar_reserva():
     #Recojo los datos del form
-    codigo = request.form['codigo']
-    nombre = request.form['nombre']
+    Codigo = request.form['Codigo']
+    Nombre = request.form['Nombre']
     Apellido = request.form['Apellido']
     dni = request.form['dni']
     FeIng = request.form['FeIng']
     FeEgr = request.form['FeEgr']
     Hus = request.form['Hus']
-    email = request.form['email']
+    Email = request.form['Email']
     Mensaje = request.form['Mensaje']  
     #imagen = request.files['imagen']
     # nombre_imagen = ""
 
-    if catalogo.agregar_reserva(codigo, nombre, Apellido, dni, FeIng, FeEgr, Hus, email, Mensaje):
+    if catalogo.agregar_reserva(Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
         #imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
-        return jsonify({"mensaje": "Reserva realizada"}), 201
+        return jsonify({"Mensaje": "Reserva realizada"}), 201
     else:
-        return jsonify({"mensaje": "Error reserva ya existente"}), 400
+        return jsonify({"Mensaje": "Error reserva ya existente"}), 400
 
 
 
@@ -166,8 +166,8 @@ def consultar_reserva():
 
 #--------------------------------------------------------------------
 @app.route("/reserva/<int:codigo>", methods=["GET"])
-def listar_reserva(codigo):
-    reserva = catalogo.listar_reserva(codigo)
+def listar_reserva(Codigo):
+    reserva = catalogo.listar_reserva(Codigo)
     if reserva:
         return jsonify(catalogo), 201
     else:
@@ -177,7 +177,7 @@ def listar_reserva(codigo):
 
 
 @app.route("/Reserva/<int:codigo>", methods=["DELETE"])
-def eliminar_reserva(codigo):
+def eliminar_reserva(Codigo):
     # Busco el producto guardado
     #producto = producto = catalogo.consultar_producto(codigo)
     # if producto: # Si existe el producto...
@@ -190,7 +190,7 @@ def eliminar_reserva(codigo):
     #         os.remove(ruta_imagen)
 
     # Luego, elimina el producto del catálogo
-    if catalogo.eliminar_reserva(codigo):
+    if catalogo.eliminar_reserva(Codigo):
         return jsonify({"mensaje": "Reserva Cancelada"}), 200
     else:
         return jsonify({"mensaje": "Error al Cancelar la Reserva"}), 500
