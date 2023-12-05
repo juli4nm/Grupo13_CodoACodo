@@ -35,7 +35,7 @@ class Catalogo:
             password=password,
             database=database
         )
-        self.cursor = self.conn.cursor()
+        self.cursor = self.conn.cursor(dictionary=True)
 
         # Intentamos seleccionar la base de datos
         try:
@@ -74,7 +74,7 @@ class Catalogo:
             return False
 
         sql = "INSERT INTO Reserva (codigo, nombre, Apellido, dni, FeIng, FeEgr, Hus, email, Mensaje) VALUES (%s, %s, %s, %s, %s, %s,%s, %s, %s)"
-        valores = (codigo, nombre, Apellido, dni, FeIng, FeEgr, Hus, email, Mensaje
+        valores = ({codigo}, {nombre}, {Apellido}, {dni}, {FeIng}, {FeEgr}, {Hus}, {email}, {Mensaje}
         )
 
         self.cursor.execute(sql, valores)        
@@ -101,7 +101,13 @@ class Catalogo:
         return self.cursor.rowcount > 0
 
     #----------------------------------------------------------------
+    def modificar_reserva(self, codigo, nombre, Apellido, dni, FeIng, FeEgr, Hus, email, Mensaje):
+        sql = f"UPDATE Reserva SET codigo = {codigo}, nombre = '{nombre}', Apellido = {Apellido}, dni = {dni}, FeIng = {FeIng}, FeEgr = {FeEgr}, Hus = {Hus}, email = {email}, Mensaje = {Mensaje}, WHERE codigo = {codigo}"
+    
 
+        self.cursor.execute(sql)        
+        self.conn.commit()
+        return True
 
 
 
