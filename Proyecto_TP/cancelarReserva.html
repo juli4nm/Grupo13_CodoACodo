@@ -52,25 +52,25 @@
                     <thead>
                         <tr>
                             <th>Código</th>
-                            <th>nombre</th>
+                            <th>Nombre</th>
                             <th>Apellido</th>
                             <th>dni</th>
                             <th>Cantidad_Huespedes</th>
                             <th align="right">FeIng</th>
                             <th align="right">FeEgr</th>
-                            <th>email</th>
+                            <th>Email</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="reserva in Reserva">
-                            <td>{{ reserva.codigo }}</td>
-                            <td>{{ reserva.nombre }}</td>
+                        <tr v-for="reserva in reservas">
+                            <td>{{ reserva.Codigo }}</td>
+                            <td>{{ reserva.Nombre }}</td>
                             <td>{{ reserva.Apellido }}</td>
                             <td>{{ reserva.dni }}</td>
-                            <td>{{ reserva.cantidad_Huspedes }}</td>
+                            <td>{{ reserva.Cantidad_Huspedes }}</td>
                             <td align="right">{{ reserva.FeIng }}</td>
                             <td align="right">{{ reserva.FeEgr }}</td>
-                            <td>{{ reserva.email }}</td>
+                            <td>{{ reserva.Email }}</td>
                             <td><button @click="eliminarReserva(reserva.codigo)">Eliminar</button></td>
                         </tr>
                     </tbody>
@@ -100,40 +100,40 @@
 
                 <script src="https://unpkg.com/vue@next"></script>
                 <script>
-                    const URL = "http://127.0.0.1:5000/"
+                    const URL = "http://127.0.0.1:5501/"
                     //const URL = "https://arielfsp.pythonanywhere.com/"
                     //const URL = "https://prueba23513.pythonanywhere.com/"
 
                     const app = Vue.createApp({
                         data() {
                             return {
-                                productos: []
+                                reservas: []
                             }
                         },
                         methods: {
-                            obtenerProductos() {
+                            obtenerReserva() {
                                 // Obtenemos el contenido del inventario
-                                fetch(URL + 'productos')
+                                fetch(URL + 'CancelarReserva')
                                     .then(response => {
                                         // Parseamos la respuesta JSON 
                                         if (response.ok) { return response.json(); }
                                     })
                                     .then(data => {
                                         // El código Vue itera este elemento para generar la tabla
-                                        this.productos = data;
+                                        this.reservas = data;
                                     })
                                     .catch(error => {
                                         console.log('Error:', error);
-                                        alert('Error al obtener los productos.');
+                                        alert('Error al eliminar reserva.');
                                     });
                             },
-                            eliminarProducto(codigo) {
-                                if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
-                                    fetch(URL + `productos/${codigo}`, { method: 'DELETE' })
+                            eliminarReserva(codigo) {
+                                if (confirm('¿Estás seguro de que quieres eliminar esta reserva?')) {
+                                    fetch(URL + `CancelarReserva/${codigo}`, { method: 'DELETE' })
                                         .then(response => {
                                             if (response.ok) {
-                                                this.productos = this.productos.filter(producto => producto.codigo !== codigo);
-                                                alert('Producto eliminado correctamente.');
+                                                this.reservas = this.reservas.filter(reservaso => reserva.codigo !== codigo);
+                                                alert('Reserva eliminada correctamente.');
                                             }
                                         })
                                         .catch(error => {
@@ -144,7 +144,7 @@
                         },
                         mounted() {
                             //Al cargar la página, obtenemos la lista de productos
-                            this.obtenerProductos();
+                            this.obtenerReserva();
                         }
                     });
 
