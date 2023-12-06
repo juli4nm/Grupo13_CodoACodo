@@ -74,8 +74,7 @@ class Catalogo:
             return False
 
         sql = "INSERT INTO reserva (Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje) VALUES (%s, %s, %s, %s, %s, %s,%s, %s, %s)"
-        valores = ({Codigo}, {Nombre}, {Apellido}, {dni}, {FeIng}, {FeEgr}, {Hus}, {Email}, {Mensaje}
-        )
+        valores = (Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje)
 
         self.cursor.execute(sql, valores)        
         self.conn.commit()
@@ -101,16 +100,21 @@ class Catalogo:
         return self.cursor.rowcount > 0
 
     #----------------------------------------------------------------
-    def modificar_reserva(self, Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
-        sql = f"UPDATE Reserva SET codigo = {Codigo}, Nombre = '{Nombre}', Apellido = {Apellido}, dni = {dni}, FeIng = {FeIng}, FeEgr = {FeEgr}, Hus = {Hus}, Email = {Email}, Mensaje = {Mensaje}, WHERE codigo = {Codigo}"
+    # def modificar_reserva(self, Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
+    #     sql = f"UPDATE Reserva SET Codigo = {Codigo}, Nombre = '{Nombre}', Apellido = {Apellido}, dni = {dni}, FeIng = {FeIng}, FeEgr = {FeEgr}, Hus = {Hus}, Email = {Email}, Mensaje = {Mensaje}, WHERE Codigo = {Codigo}"
     
 
-        self.cursor.execute(sql)        
+    #     self.cursor.execute(sql)        
+    #     self.conn.commit()
+    #     return True
+
+
+    def modificar_reserva(self, Codigo, nueva_Nombre, nueva_Apellido, nueva_dni, nueva_FeIng, nueva_FeEgr, nueva_Hus, nueva_Email, nueva_Mensaje):
+        sql = "UPDATE reserva SET Nombre = %s, Apellido = %s, dni = %s, FeIng = %s, FeEgr = %s, Hus = %s, Email = %s, Mensaje = %s  WHERE Codigo = %s"
+        valores = (nueva_Nombre, nueva_Apellido, nueva_dni, nueva_FeIng, nueva_FeEgr, nueva_Hus, nueva_Email, nueva_Mensaje, Codigo)
+        self.cursor.execute(sql, valores)
         self.conn.commit()
-        return True
-
-
-
+        return self.cursor.rowcount > 0
 
 
 
@@ -121,10 +125,11 @@ class Catalogo:
 catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_TPO')
 #catalogo = Catalogo(host='arielfsp.mysql.pythonanywhere-services.com', user='arielfsp', password='1234qw12', database='arielfsp$miapp')
 
-catalogo.agregar_reserva(123, "Miguel","Suarez", 25785123 , '2023-12-1', '2023-12-4', 1, 'MiguelSuarez@hotmial.com', 'desayuno incluido')
-#catalogo.consultar_reserva(1)
+#catalogo.agregar_reserva(124, "juan","Martinez", 11785123 , '2023-11-1', '2023-11-4', 1, 'MiguelSuarez@hotmial.com', 'desayuno incluido')
+#catalogo.consultar_reserva(123)
 # catalogo.agregar_producto(3, "Mouse tres botones",11, 3400, "mouse.jpg",1)
-#catalogo.eliminar_Reserva (13)
+#catalogo.eliminar_Reserva (123)
+catalogo.modificar_reserva (124, "Maria","perez", 21785123 , '2023-12-1', '2023-12-4', 5, 'mariaperez@gmail.com', 'estacionamiento')
 #print (catalogo.consultar_reserva(123))
 
 
@@ -167,7 +172,7 @@ def consultar_reserva():
 def listar_reserva(Codigo):
     reserva = Catalogo.listar_reserva(Codigo)
     if reserva:
-<<<<<<< HEAD
+
         return jsonify(Catalogo), 201
 
         return "Reserva no encontrada", 404
