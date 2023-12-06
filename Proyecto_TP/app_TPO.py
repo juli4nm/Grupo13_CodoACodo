@@ -118,14 +118,14 @@ class Catalogo:
 catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_TPO')
 #catalogo = Catalogo(host='arielfsp.mysql.pythonanywhere-services.com', user='arielfsp', password='1234qw12', database='arielfsp$miapp')
 
-catalogo.agregar_reserva(118, "Julia","Torres", 9785125 , '2023-07-10', '2023-07-211', 2, 'torresjulia@hotmial.com', 'primer piso')
+#catalogo.agregar_reserva(118, "Julia","Torres", 9785125 , '2023-07-10', '2023-07-211', 2, 'torresjulia@hotmial.com', 'primer piso')
 #catalogo.consultar_reserva(123)
 # catalogo.agregar_producto(3, "Mouse tres botones",11, 3400, "mouse.jpg",1)
 #catalogo.eliminar_Reserva (123)
 #catalogo.modificar_reserva (118, "Julia","Torres", 9785125 , '2023-07-10', '2023-07-21', 2, 'torresjulia@hotmial.com', 'primer piso')
 #print (catalogo.consultar_reserva(123))
 
-
+catalogo.modificar_reserva (120, "Tomas","Aquino", 35001025 , '2023-12-01', '2023-12-5', 2, 'aquinotomas00@hotmial.com', 'desayuno')
 
 
 
