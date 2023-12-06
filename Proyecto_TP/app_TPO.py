@@ -100,13 +100,6 @@ class Catalogo:
         return self.cursor.rowcount > 0
 
     #----------------------------------------------------------------
-    # def modificar_reserva(self, Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
-    #     sql = f"UPDATE Reserva SET Codigo = {Codigo}, Nombre = '{Nombre}', Apellido = {Apellido}, dni = {dni}, FeIng = {FeIng}, FeEgr = {FeEgr}, Hus = {Hus}, Email = {Email}, Mensaje = {Mensaje}, WHERE Codigo = {Codigo}"
-    
-
-    #     self.cursor.execute(sql)        
-    #     self.conn.commit()
-    #     return True
 
 
     def modificar_reserva(self, Codigo, nueva_Nombre, nueva_Apellido, nueva_dni, nueva_FeIng, nueva_FeEgr, nueva_Hus, nueva_Email, nueva_Mensaje):
@@ -125,11 +118,11 @@ class Catalogo:
 catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_TPO')
 #catalogo = Catalogo(host='arielfsp.mysql.pythonanywhere-services.com', user='arielfsp', password='1234qw12', database='arielfsp$miapp')
 
-#catalogo.agregar_reserva(124, "juan","Martinez", 11785123 , '2023-11-1', '2023-11-4', 1, 'MiguelSuarez@hotmial.com', 'desayuno incluido')
+catalogo.agregar_reserva(118, "Julia","Torres", 9785125 , '2023-07-10', '2023-07-211', 2, 'torresjulia@hotmial.com', 'primer piso')
 #catalogo.consultar_reserva(123)
 # catalogo.agregar_producto(3, "Mouse tres botones",11, 3400, "mouse.jpg",1)
 #catalogo.eliminar_Reserva (123)
-catalogo.modificar_reserva (124, "Maria","perez", 21785123 , '2023-12-1', '2023-12-4', 5, 'mariaperez@gmail.com', 'estacionamiento')
+#catalogo.modificar_reserva (118, "Julia","Torres", 9785125 , '2023-07-10', '2023-07-21', 2, 'torresjulia@hotmial.com', 'primer piso')
 #print (catalogo.consultar_reserva(123))
 
 
