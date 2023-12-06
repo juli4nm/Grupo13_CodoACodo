@@ -2,7 +2,7 @@
 #--------------------------------------------------------------------
 # Instalar con pip install Flask
 from flask import Flask, request, jsonify
-from flask import request
+from flask import request, render_template
 
 # Instalar con pip install flask-cors
 from flask_cors import CORS
@@ -64,7 +64,8 @@ class Catalogo:
         # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
         self.cursor.close()
         self.cursor = self.conn.cursor(dictionary=True)
-        
+
+
     #----------------------------------------------------------------
     def agregar_reserva(self, Codigo, Nombre, Apellido, dni, FeIng, FeEgr, Hus, Email, Mensaje):
         # Verificamos si ya existe una Reserva con el mismo código

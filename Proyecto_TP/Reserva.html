@@ -46,8 +46,8 @@
         <body>
             <h2>Ingresa tus datos para Reservar</h2>
 
-            <form id="formulario" enctype="multipart/form-data>
-                <label for=" Codigo">Código de Reserva:</label>
+            <form id="formulario" method="post" action="Reserva.html">
+                <label for="Codigo">Código de Reserva:</label>
                 <input type="text" id="Codigo" name="Codigo" required><br>
                 <label for="Nombre">Nombre:</label>
                 <input type="text" name="nombre" id="Nombre" size="15" required>
@@ -74,7 +74,10 @@
 
                 <!-- Botones para controlar el formulario -->
                 <br><br>
-                <button type="submit">Reservar</button>
+                     <button type="submit" value="submit">Reservar</button> 
+                
+                
+               
                 <a href="contacto.html">Volver al Formulario</a>
                 <br><br>
             </form>
