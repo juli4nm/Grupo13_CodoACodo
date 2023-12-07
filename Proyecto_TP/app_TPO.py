@@ -93,14 +93,14 @@ class Catalogo:
         return reserva
     
 
- #----------------------------------------------------------------
+#----------------------------------------------------------------
     def eliminar_Reserva(self, Codigo):
         # Eliminamos un producto de la tabla a partir de su código
         self.cursor.execute(f"DELETE FROM reserva WHERE codigo = {Codigo}")
         self.conn.commit()
         return self.cursor.rowcount > 0
 
-    #----------------------------------------------------------------
+#----------------------------------------------------------------
 
 
     def modificar_reserva(self, Codigo, nueva_Nombre, nueva_Apellido, nueva_dni, nueva_FeIng, nueva_FeEgr, nueva_Hus, nueva_Email, nueva_Mensaje):
@@ -110,7 +110,7 @@ class Catalogo:
         self.conn.commit()
         return self.cursor.rowcount > 0
 
- #----------------------------------------------------------------
+#----------------------------------------------------------------
     def mostrar_reserva(self, codigo):
         # Mostramos los datos de un producto a partir de su código
         reserva = self.consultar_reserva(codigo)
