@@ -32,10 +32,10 @@ class Catalogo:
             host=host,
             port= 3307,
             user=user,
-            password=password,
+            password=password
             #database=database
         )
-        self.cursor = self.conn.cursor(dictionary=True)
+        self.cursor = self.conn.cursor()
 
         # Intentamos seleccionar la base de datos
         try:
@@ -89,8 +89,8 @@ class Catalogo:
     #---------------------------------------------------------------
     def listar_reserva(self):
         self.cursor.execute("SELECT * FROM reserva")
-        catalogo = self.cursor.fetchall()
-        return catalogo
+        reserva = self.cursor.fetchall()
+        return reserva
     
 
  #----------------------------------------------------------------
@@ -110,6 +110,25 @@ class Catalogo:
         self.conn.commit()
         return self.cursor.rowcount > 0
 
+ #----------------------------------------------------------------
+    def mostrar_reserva(self, codigo):
+        # Mostramos los datos de un producto a partir de su código
+        reserva = self.consultar_reserva(codigo)
+        if producto:
+            print("-" * 40)
+            print(f"Codigo.....: {reserva['codigo']}")
+            print(f"Nombre.....: {reserva['Nombre']}")
+            print(f"Apellido...: {reserva['Apellido']}")
+            print(f"dni.....: {reserva['dni']}")
+            print(f"FeIng.....: {reserva['FeIng']}")
+            print(f"FeEgr.....: {reserva['FeEgr']}")
+            print(f"Hus..: {reserva['Hus']}")
+            print(f"Email..: {reserva['Email']}")
+            print(f"Mensaje..: {reserva['Mensaje']}")
+            print("-" * 40)
+        else:
+            print("Reserva no encontrada.")
+
 
 
 # Cuerpo del programa
@@ -119,7 +138,7 @@ class Catalogo:
 catalogo = Catalogo(host='localhost', port='3307', user='root', password='', database='app_tpo')
 #catalogo = Catalogo(host='arielfsp.mysql.pythonanywhere-services.com', user='arielfsp', password='1234qw12', database='arielfsp$miapp')
 
-catalogo.agregar_reserva(118, "Julia","Torres", 9785125 , '2023-07-10', '2023-07-211', 2, 'torresjulia@hotmial.com', 'primer piso')
+#catalogo.agregar_reserva(118, "Julia","Torres", 9785125 , '2023-07-10', '2023-07-211', 2, 'torresjulia@hotmial.com', 'primer piso')
 #catalogo.consultar_reserva(123)
 # catalogo.agregar_producto(3, "Mouse tres botones",11, 3400, "mouse.jpg",1)
 #catalogo.eliminar_Reserva (123)
