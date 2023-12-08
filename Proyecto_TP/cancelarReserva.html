@@ -132,7 +132,7 @@
                                     fetch(URL + `CancelarReserva/${codigo}`, { method: 'DELETE' })
                                         .then(response => {
                                             if (response.ok) {
-                                                this.reservas = this.reservas.filter(reservaso => reserva.codigo !== codigo);
+                                                this.reservas = this.reservas.filter(reserva => reserva.codigo !== codigo);
                                                 alert('Reserva eliminada correctamente.');
                                             }
                                         })
