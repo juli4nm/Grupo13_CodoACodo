@@ -114,7 +114,7 @@ class Catalogo:
     def mostrar_reserva(self, codigo):
         # Mostramos los datos de un producto a partir de su código
         reserva = self.consultar_reserva(codigo)
-        if producto:
+        if reserva:
             print("-" * 40)
             print(f"Codigo.....: {reserva['codigo']}")
             print(f"Nombre.....: {reserva['Nombre']}")
