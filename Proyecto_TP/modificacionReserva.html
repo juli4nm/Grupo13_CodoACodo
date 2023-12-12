@@ -122,7 +122,7 @@
             },
             methods: {
                 obtenerModificacion() {
-                    console.log(URL + 'reserva/' + this.codigo)
+                    console.log(URL + 'modificacioReserva' + this.codigo)
                     fetch(URL + 'reserva/' + this.codigo)
                         .then(response => response.json())
                         .then(data => {
@@ -147,7 +147,7 @@
                     formData.append('Hus', this.Hus);
                     formData.append('Mensaje', this.Mensaje);
 
-                    fetch(URL + 'reserva/' + this.codigo, {
+                    fetch(URL + 'modificacioReserva' + this.codigo, {
                         method: 'PUT',
                         body: formData,
                     })
